@@ -1,6 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ProductList from "./components/ProductList/ProductList";
+import AboutUs from "./components/UI/About Us/AboutUs";
+import Footer from "./components/UI/Footer/Footer";
+import OrderForm from "./components/UI/OrderForm/OrderForm";
 
 const MainRoutes = () => {
   // const ROUTES = [
@@ -11,9 +13,14 @@ const MainRoutes = () => {
   // ]
 
   return (
-    <Routes>
-      <Route path="/products" element={<ProductList />} />
-    </Routes>
+    <>
+      <Routes>
+        <Route path="/" element={<AboutUs />} />
+        {/* <Route path="/" element={<OrderForm />} /> */}
+      </Routes>
+      <OrderForm />
+      <Footer />
+    </>
   );
 };
 
