@@ -1,0 +1,9 @@
+<AboutUs />
+      <OrderForm />
+      <Header />
+      <ProductList />
+
+      import AboutUs from "./components/UI/About Us/AboutUs";
+import OrderForm from "./components/UI/OrderForm/OrderForm";
+import ProductList from "./components/products/ProductList/ProductList";
+import Header from "./components/UI/Header/Header";
