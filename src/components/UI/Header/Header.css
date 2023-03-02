@@ -1,0 +1,20 @@
+.header {
+    background-color: black;
+    height: 400px;
+}
+.header_block {
+    width: 1150px;
+    margin: 0 auto;
+}
+.header_span {
+    color: white;
+    margin-top: 3rem;
+}
+.header_title {
+    color: #0096d6;
+    width: 700px;
+}
+.header_text {
+    color: white;
+    width: 700px;
+}

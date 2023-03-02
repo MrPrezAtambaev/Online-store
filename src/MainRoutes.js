@@ -1,19 +1,19 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import ProductList from "./components/ProductList/ProductList";
+import Navbar from "./components/UI/Navbar/Navbar";
+import ProductList from "./components/products/ProductList/ProductList";
+import Header from "./components/UI/Header/Header";
 
 const MainRoutes = () => {
-  // const ROUTES = [
-  //     {
-  //         link: '/',
-  //         element: < />
-  //     }
-  // ]
-
   return (
-    <Routes>
-      <Route path="/products" element={<ProductList />} />
-    </Routes>
+    <>
+      <Navbar/>
+      <Header/>
+      <Routes>
+        <Route path="/" element={<ProductList />} />
+      </Routes>
+      {/* <Search/> */}
+    </>
   );
 };
 
