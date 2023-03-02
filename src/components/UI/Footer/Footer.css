@@ -32,7 +32,7 @@
   display: flex;
   flex-wrap: nowrap;
   width: 200px;
-  margin-bottom: 10px;
+  margin-bottom: -5px;
   text-align: start;
 }
 .list-unstyled > li {
@@ -62,4 +62,25 @@ li:hover {
   background-color: transparent;
   color: inherit;
   text-decoration: none;
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: center;
+}
+
+.footer-copyright ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-right: 5px;
+}
+
+.footer-social li {
+  margin-right: 5px;
+}
+
+.footer-social li:last-child {
+  margin-right: 0;
 }
