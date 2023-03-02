@@ -7,7 +7,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer = () => {
   return (
-    <>
+    <div style={{marginTop: '5rem'}} >
       <div className="col-md-6 mt-md-0 mt-10">
         <h5 className="text-uppercase">Footer Content</h5>
         <p>
@@ -87,7 +87,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 
