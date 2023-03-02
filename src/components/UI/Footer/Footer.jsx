@@ -1,10 +1,14 @@
 import React from "react";
 import "./Footer.css";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer = () => {
   return (
     <>
-      <div className="col-md-6 mt-md-0 mt-3">
+      <div className="col-md-6 mt-md-0 mt-10">
         <h5 className="text-uppercase">Footer Content</h5>
         <p>
           Here you can use rows and columns to organize your footer content.
@@ -19,25 +23,25 @@ const Footer = () => {
               <h5 className="text-uppercase">Legal Notice</h5>
               <ul className="list-unstyled">
                 <li>
-                  <a href="#!">Global Privacy Policy</a>
+                  <a href="#">Global Privacy Policy</a>
                 </li>
                 <li>
-                  <a href="#!">Web Privacy & Cookie Policy</a>
+                  <a href="#">Web Privacy & Cookie Policy</a>
                 </li>
                 <li>
-                  <a href="#!">Privacy Notice for Websites</a>
+                  <a href="#">Privacy Notice for Websites</a>
                 </li>
                 <li>
-                  <a href="#!">Privacy Notice for Customers</a>
+                  <a href="#">Privacy Notice for Customers</a>
                 </li>
                 <li>
-                  <a href="#!">General Terms and Conditions</a>
+                  <a href="#">General Terms and Conditions</a>
                 </li>
               </ul>
             </div>
 
             <div className="right-title col-md-3 mb-md-0 mb-3">
-              <h5 className="text-uppercase">Legal Notice</h5>
+              <h5 className="text-uppercase">Our Company</h5>
               <ul className="list-unstyled2">
                 <li>
                   <a href="#">About Sennheiser</a>
@@ -51,7 +55,7 @@ const Footer = () => {
                 <li>
                   <a href="#">Newsroom</a>
                 </li>
-                <li>
+                <li style={{ display: "contents" }}>
                   <a href="#">Sennheiser Consumer Ambassador Program</a>
                 </li>
               </ul>
@@ -59,8 +63,29 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <div className="footer-copyright text-center py-3">
-        © 2023 Sonova Consumer Hearing GmbH
+      <div className="footer-copyright text-center py-3 ">
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/sennheiser/">
+              <InstagramIcon />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.facebook.com/SennheiserRussia/?brand_redir=65693774816/">
+              <FacebookIcon />
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/Sennheiser">
+              <TwitterIcon />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/sennheiser/">
+              <YouTubeIcon />
+            </a>
+          </li>
+        </ul>
       </div>
     </>
   );
