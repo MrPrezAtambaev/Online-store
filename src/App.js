@@ -3,7 +3,9 @@ import MainRoutes from "./MainRoutes";
 import Navbar from "./components/Navbar/Navbar";
 
 function App() {
-  return <MainRoutes />;
+  return (
+    <MainRoutes/>
+  )
 }
 
 export default App;
