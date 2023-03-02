@@ -1,3 +1,10 @@
+.products_db {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 1150px;
+    margin:  0 auto;
+}
 .product_card {
     background-color: black;
 }

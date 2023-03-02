@@ -3,7 +3,7 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <>
+    <div style={{marginTop: '5rem'}} >
       <div className="col-md-6 mt-md-0 mt-3">
         <h5 className="text-uppercase">Footer Content</h5>
         <p>
@@ -62,7 +62,7 @@ const Footer = () => {
       <div className="footer-copyright text-center py-3">
         © 2023 Sonova Consumer Hearing GmbH
       </div>
-    </>
+    </div>
   );
 };
 
