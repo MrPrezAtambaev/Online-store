@@ -10,8 +10,8 @@ import Navbar from "./components/UI/Navbar/Navbar";
 import Footer from "./components/UI/Footer/Footer";
 import AdminPage from "./pages/AdminPage/AdminPage";
 import ProductsContextProvider from "./context/ProductsContext";
-import EditProduct from "./components/products/EditProduct/EditProduct";
 import ProductDetails from "./components/products/ProductsDetails/ProductDetails";
+import EditProductPage from "./pages/EditProductPage/EditProductPage";
 import CartPage from "./pages/CartPage/CartPage";
 import CartContextProvider from "./context/CartContextProvider";
 
@@ -34,7 +34,7 @@ const MainRoutes = () => {
     },
     {
       link: "/edit/:id",
-      element: <EditProduct />,
+      element: <EditProductPage />,
       id: 4,
     },
     {
@@ -49,8 +49,6 @@ const MainRoutes = () => {
           <Navbar />
           <Header />
           <ProductList />
-          {/* <AboutUs />
-          <OrderForm /> */}
           <Footer />
         </>
       ),

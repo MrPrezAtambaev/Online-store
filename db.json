@@ -1,14 +1,30 @@
 {
   "products": [
     {
-      "img": "https://wallpaperaccess.com/full/3442533.jpg",
-      "title": "Some Girl",
-      "category": "Girl",
-      "color": "White",
-      "price": 32000,
-      "type": "Gender",
-      "id": 1
+      "img": "sd",
+      "title": "sd",
+      "category": "ds",
+      "color": "sd",
+      "price": 3200,
+      "type": "dssss",
+      "id": 3
     },
+    {
+      "img": "ss",
+      "title": "dd",
+      "category": "ff",
+      "color": "ff",
+      "price": 32000,
+      "type": "ds",
+      "id": 2
+    },
+    {
+      "img": "ss",
+      "title": "dd",
+      "category": "ff",
+      "color": "ff",
+      "price": 32000,
+      "type": "ds",
     {
       "img": "https://t3.ftcdn.net/jpg/00/91/07/82/360_F_91078252_i7cx2uJzDzgoJGDdUAHtVAcpjugVauX9.jpg",
       "title": "True Wirless",
