@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -12,8 +12,9 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthContextProvider";
+import { useProducts } from "../../../context/ProductsContext";
 
 const settings = [
   {
@@ -27,7 +28,22 @@ const settings = [
 ];
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const {getProducts} = useProducts()
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [search, setSearch] = useState(searchParams.get('q') || (''))
+
+  useEffect(() => {
+    setSearchParams({
+      q: search
+    });
+  }, [search, ])
+  
+  useEffect(() => {
+    getProducts()
+    // setPage(1)
+  }, [searchParams])
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -45,7 +61,7 @@ const Navbar = () => {
   };
 
   //! not navbar
-  const navigate = useNavigate();
+  // const navigates = useNavigate();
   const { logout, user, checkAuth } = useAuth();
   // const { cartLength } = useCart();
 
@@ -99,6 +115,8 @@ const Navbar = () => {
 
             <div className="navbar__icons">
               <input
+                value={search} 
+                onChange={e => setSearch(e.target.value)}
                 placeholder="Search"
                 type="search"
                 name=""

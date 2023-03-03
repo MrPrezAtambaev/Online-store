@@ -1,15 +1,6 @@
 {
   "products": [
     {
-      "img": "ss",
-      "title": "dd",
-      "category": "ff",
-      "color": "ff",
-      "price": 32000,
-      "type": "ds",
-      "id": 2
-    },
-    {
       "img": "sd",
       "title": "sd",
       "category": "ds",
@@ -26,6 +17,15 @@
       "price": 32000,
       "type": "ds",
       "id": 2
+    },
+    {
+      "img": "ss",
+      "title": "dd",
+      "category": "ff",
+      "color": "ff",
+      "price": 32000,
+      "type": "ds",
+      "id": 4
     }
   ]
 }

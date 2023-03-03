@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { createContext, useContext, useReducer, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 export const productContext = createContext()
 export const useProducts = () => useContext(productContext)
@@ -23,10 +24,13 @@ function reducer(state=INIT_STATE, action) {
 }
 
 const ProductsContextProvider = ({children}) => {
-    const [state, dispatch] = useReducer(reducer, INIT_STATE)
+    const [state, dispatch] = useReducer(reducer, INIT_STATE);
+    const navigate = useNavigate()
+    const [page, setPage] = useState(1);
+    const location = useLocation()
 
     async function getProducts() {
-        const {data} = await axios(API)
+        const {data} = await axios(`${API}/${window.location.search}`)
         dispatch({
             type: 'GET_PRODUCTS',
             payload: data
@@ -60,6 +64,20 @@ const ProductsContextProvider = ({children}) => {
         getProducts()
     }
 
+    const fetchByParams = (query, value) => {
+        const search = new URLSearchParams (location.search);
+        if(value == 'all') {
+            search.delete(query);
+        } else {
+            search.set(query, value)
+        };
+
+        const url = `${location.pathname}?${search.toString()}`
+
+        navigate(url)
+    }
+
+
     const values = {
         getProducts,
         addProduct,
@@ -67,7 +85,10 @@ const ProductsContextProvider = ({children}) => {
         getOneProduct,
         editedProduct,
         oneProduct: state.oneProduct,
-        deleteProduct
+        deleteProduct,
+        fetchByParams,
+        setPage,
+        page
     }
 
   return (

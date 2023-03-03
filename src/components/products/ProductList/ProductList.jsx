@@ -4,7 +4,7 @@ import ProductCard from "../ProductCard/ProductCard";
 import '../ProductCard/ProductCard.css'
 
 const ProductList = () => {
-  const {products, getProducts} = useProducts()
+  const {products, getProducts, setPage} = useProducts()
 
   useEffect(() => {
     getProducts()
