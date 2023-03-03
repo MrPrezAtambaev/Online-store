@@ -15,6 +15,9 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthContextProvider";
 import { useProducts } from "../../../context/ProductsContext";
+import { useCart } from "../../../context/CartContextProvider";
+import Badge from "@mui/material/Badge";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const settings = [
   {
@@ -63,7 +66,7 @@ const Navbar = () => {
   //! not navbar
   // const navigates = useNavigate();
   const { logout, user, checkAuth } = useAuth();
-  // const { cartLength } = useCart();
+  const { cartLength } = useCart();
 
   React.useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -123,7 +126,18 @@ const Navbar = () => {
                 id=""
                 className="navbar_search"
               />
-              <button className="navbar_card">0</button>
+              <button className="navbar_card">
+                <IconButton
+                  size="large"
+                  color="inherit"
+                  onClick={() => navigate("/cart")}
+                  style={{ padding: 0 }}
+                >
+                  <Badge badgeContent={cartLength} color="error">
+                    <ShoppingCartOutlinedIcon />
+                  </Badge>
+                </IconButton>
+              </button>
               <Box sx={{ flexGrow: 0, paddingRight: "1rem" }}>
                 <Tooltip title="Profile">
                   <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

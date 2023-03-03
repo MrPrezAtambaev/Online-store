@@ -12,6 +12,8 @@ import AdminPage from "./pages/AdminPage/AdminPage";
 import ProductsContextProvider from "./context/ProductsContext";
 import ProductDetails from "./components/products/ProductsDetails/ProductDetails";
 import EditProductPage from "./pages/EditProductPage/EditProductPage";
+import CartPage from "./pages/CartPage/CartPage";
+import CartContextProvider from "./context/CartContextProvider";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -37,7 +39,7 @@ const MainRoutes = () => {
     },
     {
       link: "/details/:id",
-      element: <ProductDetails/>,
+      element: <ProductDetails />,
       id: 5,
     },
     {
@@ -62,17 +64,30 @@ const MainRoutes = () => {
           <Footer />
         </>
       ),
+      id: 6,
+    },
+    {
+      link: "/cart",
+      element: (
+        <>
+          {/* <Navbar /> */}
+          <CartPage />
+        </>
+      ),
+      id: 7,
     },
   ];
 
   return (
-    <ProductsContextProvider>
+    <CartContextProvider>
+      <ProductsContextProvider>
         <Routes>
           {PUBLIC_ROUTES.map((item) => (
             <Route path={item.link} element={item.element} key={item.id} />
           ))}
         </Routes>
-    </ProductsContextProvider>
+      </ProductsContextProvider>
+    </CartContextProvider>
   );
 };
 

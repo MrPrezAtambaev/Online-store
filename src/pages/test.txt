@@ -1,9 +1,12 @@
-<AboutUs />
-      <OrderForm />
-      <Header />
-      <ProductList />
-
-      import AboutUs from "./components/UI/About Us/AboutUs";
-import OrderForm from "./components/UI/OrderForm/OrderForm";
-import ProductList from "./components/products/ProductList/ProductList";
-import Header from "./components/UI/Header/Header";
+<input type="text" placeholder='Image' name='img' onChange={handleInp} /> <br />
+        <input type="text" placeholder='Title' name='title' onChange={handleInp} /> <br />
+        <input type="text" placeholder='Category' name='category' onChange={handleInp} /> <br />
+        <input type="text" placeholder='Type' name='type' onChange={handleInp} /> <br />
+        <input type="text" placeholder='Color' name='color' onChange={handleInp} /> <br />
+        <input type="number" placeholder='Price' name='price' onChange={handleInp} /> <br />
+        <button onClick={() => {
+          addProduct(product);
+          navigate('/')
+        }} >
+          Save
+        </button>

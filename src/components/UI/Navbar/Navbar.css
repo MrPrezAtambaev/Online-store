@@ -1,81 +1,83 @@
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 1380px;
-    margin: 0 auto;
-    background-color: black;
-    border-radius: 10px;
-    height: 60px;
-    position: absolute;
-    top: -673px;
-    z-index: 2;
-    left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1380px;
+  margin: 0 auto;
+  background-color: black;
+  border-radius: 10px;
+  height: 60px;
+  position: absolute;
+  top: -673px;
+  z-index: 2;
+  left: 30px;
 }
 .fix {
-    position: fixed;
+  position: fixed;
 }
 .navbar__content_title {
-    color: #ffffff;
-    padding-left: 15px;
-    
+  color: #ffffff;
+  padding-left: 15px;
 }
 .navbar_link {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 10px;
 }
 .navbar_search {
-    width: 30px;
+  width: 30px;
 }
 .navbar__icons {
-    display: flex;
+  display: flex;
 }
-.navbar_search[type=search] { 
-	color: white;  
-	text-align: left;
-	cursor: pointer;
-	display: block; 
-	width: 250px; 
-    height: 40px;
-    border-radius: 7px;
-    padding-left: 1rem;
-    background-color: #333;;
-    margin-right: 1rem;
+.navbar_search[type="search"] {
+  color: white;
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  width: 250px;
+  height: 40px;
+  border-radius: 7px;
+  padding-left: 1rem;
+  background-color: #333;
+  margin-right: 1rem;
 }
 .navbar_search::placeholder {
-    color: white;
+  color: white;
 }
 .navbar_card {
-   background: #222;
-   color: white;
-   width: 40px;
-   height: 32px;
-   margin-top: 4px; 
-   margin-right: 1rem;
-   border-radius: 10px;
+  background: #222;
+  color: white;
+  width: 40px;
+  height: 32px;
+  margin-top: 4px;
+  margin-right: 1rem;
+  border-radius: 10px;
 }
 .navbar_profile {
-    background: #222;
-    color: white;
-    width: 80px;
-    height: 32px;
-    margin-top: 4px; 
-    margin-right: 1rem;
-    border-radius: 10px;
+  background: #222;
+  color: white;
+  width: 80px;
+  height: 32px;
+  margin-top: 4px;
+  margin-right: 1rem;
+  border-radius: 10px;
 }
 .navbar_shop {
-    padding-left: 25rem;
+  padding-left: 25rem;
 }
 .abs-img {
-    position: relative;
-    bottom: 3rem;
+  position: relative;
+  bottom: 3rem;
 }
 .abs-text {
-    position: absolute;
-    bottom: 100px;
-    left: 350px;
+  position: absolute;
+  bottom: 100px;
+  left: 350px;
 }
 .prd_content_img {
-    margin-top: 2rem;
+  margin-top: 2rem;
+}
+.css-1pz7awu-MuiButtonBase-root-MuiIconButton-root {
+  padding: 0px;
 }
