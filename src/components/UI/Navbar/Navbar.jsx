@@ -35,9 +35,10 @@ const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const { getProducts } = useProducts();
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get("q") || "");
+  const navigate = useNavigate()
+  const {setPage} = useProducts()
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [search, setSearch] = useState(searchParams.get('q') || (''))
 
   useEffect(() => {
     setSearchParams({
@@ -46,9 +47,9 @@ const Navbar = () => {
   }, [search]);
 
   useEffect(() => {
-    getProducts();
-    // setPage(1)
-  }, [searchParams]);
+    getProducts()
+    setPage(1)
+  }, [searchParams])
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -200,6 +201,63 @@ const Navbar = () => {
                 )}
               </Menu>
             </Box>
+              </button>
+              <Box sx={{ flexGrow: 0, paddingRight: "1rem" }}>
+                <Tooltip title="Profile">
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar alt={user} src="..." />
+                  </IconButton>
+                </Tooltip>
+                <Menu
+                  sx={{ mt: "45px" }}
+                  id="menu-appbar"
+                  anchorEl={anchorElUser}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorElUser)}
+                  onClose={handleCloseUserMenu}
+                >
+                  {localStorage.getItem("username") ? (
+                   <>
+                    <MenuItem onClick={handleCloseUserMenu}>
+                      <Typography textAlign="center" onClick={logout}>
+                        Logout
+                      </Typography>
+                    </MenuItem>
+                      <hr />
+
+                      <MenuItem onClick={handleCloseUserMenu}>
+                      <Typography textAlign="center" onClick={() => navigate('/favorites')}>
+                         Favorites
+                      </Typography>
+                      </MenuItem>
+                   </>
+                  ) : (
+                    settings.map((setting) => (
+                      <MenuItem
+                        key={setting.type}
+                        onClick={handleCloseUserMenu}
+                      >
+                        <Typography
+                          textAlign="center"
+                          onClick={() => navigate(setting.path)}
+                        >
+                          {setting.type}
+                        </Typography>
+                      </MenuItem>
+                    ))
+                  )}
+
+                </Menu>
+              </Box>
+            </div>
           </div>
         </div>
       </div>

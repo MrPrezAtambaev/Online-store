@@ -9,7 +9,25 @@
   height: 60px;
   position: fixed;
   top: -673px;
-  z-index: 2;
+  z-index: 3;
+  left: 30px;
+}
+.navbar-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1380px;
+  margin: 0 auto;
+  background-color: black;
+  border-radius: 10px;
+  height: 60px;
+  position: absolute;
+  top: -460px;
+  z-index: 3;
+  left: 30px;
+}
+.fix {
+  position: fixed;
 }
 
 .navbar__content_title {

@@ -14,6 +14,10 @@ import ProductDetails from "./components/products/ProductsDetails/ProductDetails
 import EditProductPage from "./pages/EditProductPage/EditProductPage";
 import CartPage from "./pages/CartPage/CartPage";
 import CartContextProvider from "./context/CartContextProvider";
+import SaleProducts from "./components/products/SaleProducts/SaleProducts";
+import LikesPage from "./pages/LikesPage/LikesPage";
+import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
+import OtdelNavbar from "./components/UI/OtdelNavbar/OtdelNavbar";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -48,7 +52,9 @@ const MainRoutes = () => {
         <>
           <Navbar />
           <Header />
+          <SaleProducts/>
           <ProductList />
+          <LikesPage/>
           <Footer />
         </>
       ),
@@ -75,6 +81,11 @@ const MainRoutes = () => {
         </>
       ),
       id: 7,
+    },
+    {
+      link: "/favorites",
+      element:<> <OtdelNavbar/> <FavoritesPage/></>,
+      id: 8,
     },
   ];
 

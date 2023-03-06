@@ -3,17 +3,21 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import "./LoginPage.css";
 
+const FAV_STATE = {
+  favorite: [],
+  likes: []
+}
+
 const LoginPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
   const { login, error } = useAuth();
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login(username, password);
+    login(username, FAV_STATE.favorite);
   };
   return (
     <div className="login-page">
@@ -36,7 +40,7 @@ const LoginPage = () => {
             />
             <label>Password</label>
           </div>
-          <button type="submit" onClick={() => login(username, password)}>
+          <button type="submit" onClick={() => login(username, password, FAV_STATE.favorite)}>
             Login
             <span></span>
             <span></span>
