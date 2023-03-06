@@ -1,45 +1,11 @@
 {
   "products": [
     {
-      "img": "sd",
-      "title": "sd",
-      "category": "ds",
-      "color": "sd",
-      "price": 3200,
-      "type": "dssss",
-      "id": 3
-    },
-    {
-      "img": "ss",
-      "title": "dd",
-      "category": "ff",
-      "color": "ff",
-      "price": 32000,
-      "type": "ds",
-      "id": 2
-    },
-    {
-      "img": "ss",
-      "title": "dd",
-      "category": "ff",
-      "color": "ff",
-      "price": 32000,
-      "type": "ds",
-    {
       "img": "https://t3.ftcdn.net/jpg/00/91/07/82/360_F_91078252_i7cx2uJzDzgoJGDdUAHtVAcpjugVauX9.jpg",
       "title": "True Wirless",
       "category": "HeadPhones",
       "color": "White",
       "price": 32000,
-      "type": "electronics",
-      "id": 3
-    },
-    {
-      "img": "https://mysterio.yahoo.com/api/res/1.2/DcP5HrhomTZcf5bP6nN_7g--/ZHByPTI7dz04NzU7YXBwaWQ9ZW5nYWRnZXQ-/https://s.yimg.com/os/creatr-uploaded-images/2023-02/f970b150-b20b-11ed-ab83-c2169d25a53e.cf.webp",
-      "title": "True Wireless",
-      "category": "HeadPhones",
-      "color": "Black",
-      "price": 1000,
       "type": "electronics",
       "id": 4
     }
