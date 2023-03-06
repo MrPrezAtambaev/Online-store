@@ -17,19 +17,4 @@
   .product_card {
     padding-left: 5rem;
   }
-  a.my-link[href='http://localhost:3000/about?q=']>.about
-  {
-    margin: 0;
-    width: 95%;
-  }
-  a.my-link[href='http://localhost:3000/about?q=']>.accordion
-  {
-    margin: 0;
-    width: 95%;
-  }
-
-  a.my-link[href='http://localhost:3000/about?q=']>.Section_wrapper__E_SgI
-  {
-    width: 95%;
-  }
 }
