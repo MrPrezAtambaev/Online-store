@@ -24,12 +24,12 @@ const OrderForm = () => {
                     name="email"
                     placeholder="Email"
                   />
-                  <label
+                  {/* <label
                     className="Input_label__ifeaq Input_font-xxs__FX_lm"
                     htmlFor="email"
                   >
                     Email
-                  </label>
+                  </label> */}
                 </div>
               </div>
             </fieldset>

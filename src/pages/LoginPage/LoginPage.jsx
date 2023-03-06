@@ -27,7 +27,7 @@ const LoginPage = () => {
           <div className="user-box">
             <input
               type="text"
-              placeholder="Username"
+              // placeholder="Username"
               onChange={(e) => setUsername(e.target.value)}
             />
             <label>Username</label>
@@ -35,7 +35,7 @@ const LoginPage = () => {
           <div className="user-box">
             <input
               type="password"
-              placeholder="Password"
+              // placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
             <label>Password</label>

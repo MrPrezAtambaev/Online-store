@@ -1,1 +1,35 @@
+@media only screen and (max-width: 1024px) {
+  .abs-img {
+    width: max-content;
+  }
+  .navbar_shop {
+    padding-left: 10rem;
+  }
+  .navbar__icons {
+    padding-right: 10rem;
+  }
+  .abs-text {
+    left: 215px;
+  }
+  .header_block {
+    padding-left: 10rem;
+  }
+  .product_card {
+    padding-left: 5rem;
+  }
+  a.my-link[href='http://localhost:3000/about?q=']>.about
+  {
+    margin: 0;
+    width: 95%;
+  }
+  a.my-link[href='http://localhost:3000/about?q=']>.accordion
+  {
+    margin: 0;
+    width: 95%;
+  }
 
+  a.my-link[href='http://localhost:3000/about?q=']>.Section_wrapper__E_SgI
+  {
+    width: 95%;
+  }
+}

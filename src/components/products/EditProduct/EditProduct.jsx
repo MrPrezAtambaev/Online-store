@@ -102,7 +102,7 @@ const EditProduct = () => {
             />
             <button
               style={{ marginTop: "2rem" }}
-              className="button-3"
+              className="btn third"
               role="button"
               onClick={() => {
                 editedProduct(product);
