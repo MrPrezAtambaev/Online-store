@@ -5,6 +5,7 @@ import "./RegisterPage.css";
 const RegisterPage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [admin, setAdmin] = useState(false);
 
   const { register, error } = useAuth();
 
@@ -40,6 +41,13 @@ const RegisterPage = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <label>Password confirmation</label>
+        </div>
+        <div className="user-box">
+          <input
+            type="checkbox"
+            onChange={(e) => setAdmin(e.target.value)}
+          />
+          <label>Admin</label>
         </div>
         <button onClick={() => register(username, password)}>
           Register

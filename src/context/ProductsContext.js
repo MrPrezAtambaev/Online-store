@@ -9,7 +9,9 @@ const API = 'http://localhost:8000/products'
 
 const INIT_STATE = {
     products: [],
-    oneProduct: null 
+    oneProduct: null,
+    likes: [],
+    favorites: []
 }
 
 function reducer(state=INIT_STATE, action) {
@@ -18,6 +20,8 @@ function reducer(state=INIT_STATE, action) {
             return {...state, products: action.payload}
         case 'GET_ONE_PRODUCTS': 
             return {...state, oneProduct: action.payload}
+        // case 'LIKE_PRODUCT':
+        //     return {...state, like: action.payload}
         default: 
             return state
     }
@@ -39,6 +43,11 @@ const ProductsContextProvider = ({children}) => {
 
     async function addProduct(newProduct) {
         await axios.post(API, newProduct)
+        getProducts()
+    }
+
+    async function likeProduct(newProduct) {
+        await axios.patch(`${API}/${newProduct.id}`, newProduct)
         getProducts()
     }
 
@@ -77,6 +86,11 @@ const ProductsContextProvider = ({children}) => {
         navigate(url)
     }
 
+    function setLikeStorage() {
+        localStorage.setItem('likes', JSON.stringify(INIT_STATE.likes))
+        localStorage.setItem('favorites', JSON.stringify(INIT_STATE.favorites))
+    }
+
 
     const values = {
         getProducts,
@@ -88,7 +102,9 @@ const ProductsContextProvider = ({children}) => {
         deleteProduct,
         fetchByParams,
         setPage,
-        page
+        page,
+        setLikeStorage,
+        likeProduct
     }
 
   return (

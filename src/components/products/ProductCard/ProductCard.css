@@ -1,9 +1,10 @@
 .products_db {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 1150px;
-  margin: 0 auto;
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+    align-center: center;
+    width: 1150px;
+    margin:  0 auto;
 }
 .product_card {
   background-color: black;
@@ -61,7 +62,17 @@
   margin: 0 auto;
 }
 .product_card_sort {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+.fav_btn {
+    display: block !important;
+    margin-left: 17rem;
+    margin-top: 1rem;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 2px solid gray;
+}
+ 
