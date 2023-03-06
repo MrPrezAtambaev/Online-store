@@ -2,19 +2,25 @@
   background-color: black;
   height: 400px;
 }
+
 .header_block {
   width: 1150px;
   margin: 0 auto;
 }
+
 .header_span {
   color: white;
-  margin-top: 3rem;
+  margin-top: 0; /* Set margin-top to 0 */
 }
+
 .header_title {
   color: #0096d6;
   width: 700px;
+  margin: 0; /* Set all margins to 0 */
 }
+
 .header_text {
   color: white;
   width: 700px;
+  margin: 0; /* Set all margins to 0 */
 }

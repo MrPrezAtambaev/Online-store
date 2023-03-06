@@ -29,6 +29,24 @@
       "type": "clothes",
       "like": 7,
       "id": 4
+    },
+    {
+      "img": "https://www.borofone.com/wp-content/uploads/2022/04/borofone-bo12-power-bt-headset-headphones.jpg",
+      "title": "Nayshniki",
+      "category": "HeadPhones",
+      "color": "Red",
+      "price": 21111,
+      "type": "electronics",
+      "id": 5
+    },
+    {
+      "img": "https://www.borofone.com/wp-content/uploads/2022/04/borofone-bo12-power-bt-headset-headphones.jpg",
+      "title": "Title",
+      "category": "Type",
+      "color": "Black",
+      "price": 12313,
+      "type": "Headphones",
+      "id": 6
     }
   ]
 }
