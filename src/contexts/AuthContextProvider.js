@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useReducer } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export const authContext = React.createContext();
 
 export const useAuth = () => useContext(authContext);
+
 
 const API = "http://35.239.251.89/";
 
@@ -54,6 +55,7 @@ const AuthContextProvider = ({ children }) => {
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
+    localStorage.removeItem("likes");
     setUser("");
     navigate("/");
   };

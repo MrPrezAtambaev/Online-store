@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "./Navbar.css";
+import React, { useEffect, useState } from 'react'
+import "../Navbar/Navbar.css";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -19,73 +19,70 @@ import { useCart } from "../../../context/CartContextProvider";
 import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
-const settings = [
-  {
-    type: "Register",
-    path: "/register",
-  },
-  {
-    type: "Login",
-    path: "/login",
-  },
-];
-const Navbar = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const {getProducts} = useProducts()
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const navigate = useNavigate()
-  const {setPage} = useProducts()
-  const [searchParams, setSearchParams] = useSearchParams()
-  const [search, setSearch] = useState(searchParams.get('q') || (''))
-
-  useEffect(() => {
-    setSearchParams({
-      q: search
-    });
-  }, [search, ])
+const OtdelNavbar = () => {
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const {getProducts, setPage} = useProducts()
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
+    const navigate = useNavigate()
+    const [searchParams, setSearchParams] = useSearchParams()
+    const [search, setSearch] = useState(searchParams.get('q') || (''))
   
-  useEffect(() => {
-    getProducts()
-    setPage(1)
-  }, [searchParams])
+    useEffect(() => {
+      setSearchParams({
+        q: search
+      });
+    }, [search, ])
+    
+    useEffect(() => {
+      getProducts()
+      setPage(1)
+    }, [searchParams])
+  
+    const handleOpenNavMenu = (event) => {
+      setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event) => {
+      setAnchorElUser(event.currentTarget);
+    };
+  
+    const handleCloseNavMenu = () => {
+      setAnchorElNav(null);
+    };
+  
+    const handleCloseUserMenu = () => {
+      setAnchorElUser(null);
+    };
+  
+    const settings = [
+        {
+          type: "Register",
+          path: "/register",
+        },
+        {
+          type: "Login",
+          path: "/login",
+        },
+      ];
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
-
-  //! not navbar
-  // const navigates = useNavigate();
-  const { logout, user, checkAuth } = useAuth();
-  const { cartLength } = useCart();
-
-  React.useEffect(() => {
-    if (localStorage.getItem("token")) {
-      checkAuth();
-    }
-  }, []);
-
+      const { logout, user, checkAuth } = useAuth();
+      const { cartLength } = useCart();
+    
+      React.useEffect(() => {
+        if (localStorage.getItem("token")) {
+          checkAuth();
+        }
+      }, []);
   return (
     <>
       <div style={{ background: "black" }}>
         <div className="abs-img">
           <img
-            style={{ height: "700px", width: "100%" }}
-            src="../../image/dance.jpg"
+            style={{ height: "500px", width: "100%" }}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK5ZFR0qIR1ZHkqXJaNm1JYlpNyLvCBkVrCA&usqp=CAU"
             alt=""
           />
 
-          <div className="abs-text">
+          {/* <div className="abs-text">
             <h1
               style={{ color: "white", fontSize: "64px", textAlign: "center" }}
             >
@@ -96,10 +93,10 @@ const Navbar = () => {
             >
               Discover the perfect headphones for every occasion
             </span>
-          </div>
+          </div> */}
         </div>
         <div className="fix">
-          <div className="navbar">
+          <div className="navbar-2">
             <div className="navbar__content">
               <img src="" className="navbar__content_img" alt="" />
               <h5 className="navbar__content_title"></h5>
@@ -191,7 +188,6 @@ const Navbar = () => {
                       </MenuItem>
                     ))
                   )}
-
                 </Menu>
               </Box>
             </div>
@@ -199,7 +195,7 @@ const Navbar = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default OtdelNavbar

@@ -1,6 +1,18 @@
-import React from 'react'
+import React from 'react';
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import { useProducts } from '../../../context/ProductsContext';
 
 const SaleProducts = () => {
+  const {fetchByParams} = useProducts()
   return (
     <div>
     <h1 className='product_card_title' >Best Selling Headphones</h1>
@@ -17,7 +29,7 @@ const SaleProducts = () => {
               <h6 className='prd_content_price' >
                 $‌349.95
               </h6>
-         </div>
+            </div>
 
          <button className='prd_content_btn'>
             Buy Now
@@ -26,6 +38,7 @@ const SaleProducts = () => {
          <button className="prd_content_btn_2">
             Compare
          </button>
+
       </div>
 
       <div className='product_card_content'>
@@ -86,8 +99,7 @@ const SaleProducts = () => {
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                fghj
                 </Typography>
             </AccordionDetails>
             </Accordion>
@@ -103,8 +115,20 @@ const SaleProducts = () => {
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                  <FormControl>
+                    <FormLabel id="demo-radio-buttons-group-label">Categories</FormLabel>
+                    <RadioGroup
+                      aria-labelledby="demo-radio-buttons-group-label"
+                      defaultValue="female"
+                      name="radio-buttons-group"
+                      onChange={e => fetchByParams('type', e.target.value)}
+                    >
+                      <FormControlLabel value="all" control={<Radio />} label="All" />
+                      <FormControlLabel value="sport" control={<Radio />} label="Sport" />
+                      <FormControlLabel value="clothes" control={<Radio />} label="Clothes" />
+                      <FormControlLabel value="electronics" control={<Radio />} label="Electronics" />
+                    </RadioGroup>
+                  </FormControl>
                 </Typography>
             </AccordionDetails>
             </Accordion>
@@ -121,8 +145,19 @@ const SaleProducts = () => {
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-                malesuada lacus ex, sit amet blandit leo lobortis eget.
+                  <FormControl>
+                      <FormLabel id="demo-radio-buttons-group-label">Color</FormLabel>
+                      <RadioGroup
+                        aria-labelledby="demo-radio-buttons-group-label"
+                        defaultValue="female"
+                        name="radio-buttons-group"
+                        onChange={e => fetchByParams('color', e.target.value)}
+                      >
+                        <FormControlLabel value="all" control={<Radio />} label="All" />
+                        <FormControlLabel value="Black" control={<Radio />} label="Black" />
+                        <FormControlLabel value="White" control={<Radio />} label="White" />
+                      </RadioGroup>
+                    </FormControl>
                 </Typography>
             </AccordionDetails>
             </Accordion>
