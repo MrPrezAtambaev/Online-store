@@ -1,21 +1,20 @@
 .products_db {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
   margin: 0 auto;
-  }
 }
 .product_card {
   background-color: black;
-  width: 50%;
+  width: 27%;
 }
 .product_card_block {
   width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .product_card_title {
   color: white;
@@ -59,7 +58,7 @@
   margin-top: 1.5rem;
 }
 .product_all {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 .product_card_sort {
@@ -68,33 +67,81 @@
   justify-content: space-between;
   width: 80%;
 }
+.fav_btn {
+  display: block !important;
+  margin-left: 17rem;
+  margin-top: 1rem;
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background-color: white;
+}
+/* .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-disabled {
+  color: white;
+}
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+  color: white;
+} */
+.css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root {
+  color: white !important;
+}
 
 @media only screen and (max-width: 1024px) {
   .products_db {
     display: flex;
     flex-wrap: wrap;
   }
-  /* button {
-    display: flex;
-    flex-wrap: wrap;
-  } */
+  .product_card_block {
+    margin-left: 50px;
+  }
+  .all_block {
+    margin-left: 35px;
+  }
 }
 @media only screen and (max-width: 768px) {
   .products_db {
     display: flex;
     flex-wrap: wrap;
   }
+  .product_card_block {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
+  }
+  .product_card_content {
+    margin-right: 40px;
+  }
+  .products_db {
+    width: 157%;
+  }
+  .product_card {
+    width: 50%;
+  }
+  .product_card_sort {
+    justify-content: space-around;
+  }
+  .css-2sd7ye-MuiPaper-root-MuiAppBar-root {
+    width: 85%;
+  }
+  .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root {
+    width: 150%;
+  }
 }
-.fav_btn {
-    display: block !important;
-    margin-left: 17rem;
-    margin-top: 1rem;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border: 2px solid gray;
+
+@media only screen and (max-width: 425px) {
+  .product_card_block {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root {
+    justify-content: end;
+  }
 }
- 
+@media only screen and (max-width: 320px) {
+  .product_card {
+    width: 55%;
+  }
+  .products_db {
+    width: 140%;
+  }
+}

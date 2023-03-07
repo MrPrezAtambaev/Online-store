@@ -35,10 +35,10 @@ const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const { getProducts } = useProducts();
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const navigate = useNavigate()
-  const {setPage} = useProducts()
-  const [searchParams, setSearchParams] = useSearchParams()
-  const [search, setSearch] = useState(searchParams.get('q') || (''))
+  const navigate = useNavigate();
+  const { setPage } = useProducts();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
 
   useEffect(() => {
     setSearchParams({
@@ -47,9 +47,9 @@ const Navbar = () => {
   }, [search]);
 
   useEffect(() => {
-    getProducts()
-    setPage(1)
-  }, [searchParams])
+    getProducts();
+    setPage(1);
+  }, [searchParams]);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -77,10 +77,10 @@ const Navbar = () => {
     }
   }, []);
 
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
-  const toggleDrawer = () => {
-    setIsDrawerOpen(!isDrawerOpen);
+  const handleBurgerClick = () => {
+    setShowMenu(!showMenu);
   };
 
   return (
@@ -93,10 +93,16 @@ const Navbar = () => {
         />
 
         <div className="abs-text">
-          <h1 style={{ color: "white", fontSize: "64px", textAlign: "center" }}>
+          <h1
+            className="abs-title"
+            style={{ color: "white", fontSize: "64px", textAlign: "center" }}
+          >
             All Headphones
           </h1>
-          <span style={{ color: "white", fontSize: "34px", color: "#0096d6" }}>
+          <span
+            className="abs-desc"
+            style={{ color: "white", fontSize: "34px", color: "#0096d6" }}
+          >
             Discover the perfect headphones for every occasion
           </span>
         </div>
@@ -107,7 +113,6 @@ const Navbar = () => {
             <img src="" className="navbar__content_img" alt="" />
             <h5 className="navbar__content_title"></h5>
           </div>
-
           <div className="navbar_shop">
             <a href="/" className="navbar_link">
               Shop
@@ -119,146 +124,104 @@ const Navbar = () => {
               Partners
             </a>
           </div>
+          <div
+            className="navbar__burger"
+            onClick={handleBurgerClick}
+            style={{ color: "white" }}
+          >
+            <div className="navbar__burger_line"></div>
+            <div className="navbar__burger_line"></div>
+            <div className="navbar__burger_line"></div>
+          </div>
 
-          <div className="navbar__icons">
-            <MenuIcon className="navbar__burger" onClick={toggleDrawer} />
-
-            <Drawer anchor="right" open={isDrawerOpen} onClose={toggleDrawer}>
-              <div className="drawer__content">
-                <CloseIcon className="drawer__close" onClick={toggleDrawer} />
-                <a href="/" className="drawer__link">
+          {showMenu && (
+            <>
+              <div className="navbar_shop--mobile">
+                <a href="/" className="navbar_link">
                   Shop
                 </a>
-                <a href="/about" className="drawer__link">
+                <a href="/about" className="navbar_link">
                   About Us
                 </a>
-                <a href="#" className="drawer__link">
+                <a href="#" className="navbar_link">
                   Partners
                 </a>
               </div>
-            </Drawer>
-
-            <input
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search"
-              type="search"
-              name=""
-              id=""
-              className="navbar_search"
-            />
-            <button className="navbar_card">
-              <IconButton
-                size="large"
-                color="inherit"
-                onClick={() => navigate("/cart")}
-                style={{ padding: 0 }}
-              >
-                <Badge badgeContent={cartLength} color="error">
-                  <ShoppingCartOutlinedIcon />
-                </Badge>
+            </>
+          )}
+          <input
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder="Search"
+            type="search"
+            name=""
+            id=""
+            className="navbar_search"
+          />
+          <button className="navbar_card">
+            <IconButton
+              size="large"
+              color="inherit"
+              onClick={() => navigate("/cart")}
+              style={{ padding: 0 }}
+            >
+              <Badge badgeContent={cartLength} color="error">
+                <ShoppingCartOutlinedIcon />
+              </Badge>
+            </IconButton>
+          </button>
+          <Box sx={{ flexGrow: 0, paddingRight: "1rem" }}>
+            <Tooltip title="Profile">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                <Avatar alt={user} src="..." />
               </IconButton>
-            </button>
-            <Box sx={{ flexGrow: 0, paddingRight: "1rem" }}>
-              <Tooltip title="Profile">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt={user} src="..." />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {localStorage.getItem("username") ? (
+            </Tooltip>
+            <Menu
+              sx={{ mt: "45px" }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              {localStorage.getItem("username") ? (
+                <>
                   <MenuItem onClick={handleCloseUserMenu}>
                     <Typography textAlign="center" onClick={logout}>
                       Logout
                     </Typography>
                   </MenuItem>
-                ) : (
-                  settings.map((setting) => (
-                    <MenuItem key={setting.type} onClick={handleCloseUserMenu}>
-                      <Typography
-                        textAlign="center"
-                        onClick={() => navigate(setting.path)}
-                      >
-                        {setting.type}
-                      </Typography>
-                    </MenuItem>
-                  ))
-                )}
-              </Menu>
-            </Box>
-              </button>
-              <Box sx={{ flexGrow: 0, paddingRight: "1rem" }}>
-                <Tooltip title="Profile">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar alt={user} src="..." />
-                  </IconButton>
-                </Tooltip>
-                <Menu
-                  sx={{ mt: "45px" }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-                >
-                  {localStorage.getItem("username") ? (
-                   <>
-                    <MenuItem onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center" onClick={logout}>
-                        Logout
-                      </Typography>
-                    </MenuItem>
-                      <hr />
-
-                      <MenuItem onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center" onClick={() => navigate('/favorites')}>
-                         Favorites
-                      </Typography>
-                      </MenuItem>
-                   </>
-                  ) : (
-                    settings.map((setting) => (
-                      <MenuItem
-                        key={setting.type}
-                        onClick={handleCloseUserMenu}
-                      >
-                        <Typography
-                          textAlign="center"
-                          onClick={() => navigate(setting.path)}
-                        >
-                          {setting.type}
-                        </Typography>
-                      </MenuItem>
-                    ))
-                  )}
-
-                </Menu>
-              </Box>
-            </div>
-          </div>
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <Typography
+                      textAlign="center"
+                      onClick={() => navigate("/favorites")}
+                    >
+                      Favorites
+                    </Typography>
+                  </MenuItem>
+                </>
+              ) : (
+                settings.map((setting) => (
+                  <MenuItem key={setting.type} onClick={handleCloseUserMenu}>
+                    <Typography
+                      textAlign="center"
+                      onClick={() => navigate(setting.path)}
+                    >
+                      {setting.type}
+                    </Typography>
+                  </MenuItem>
+                ))
+              )}
+            </Menu>
+          </Box>
         </div>
       </div>
     </div>
