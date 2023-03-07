@@ -24,12 +24,6 @@ const OrderForm = () => {
                     name="email"
                     placeholder="Email"
                   />
-                  {/* <label
-                    className="Input_label__ifeaq Input_font-xxs__FX_lm"
-                    htmlFor="email"
-                  >
-                    Email
-                  </label> */}
                 </div>
               </div>
             </fieldset>
@@ -102,13 +96,19 @@ const OrderForm = () => {
         <div className="Newsletter_image-wrapper__SmXSn">
           <div
             className="Image_cover__i0Wfj graphcms-image-outer-wrapper"
-            style={{ zIndex: 0, position: "relative" }}
+            style={{ zIndex: -1, position: "relative" }}
           >
             <div
               className=" graphcms-image-wrapper"
-              style={{ position: "relative", overflow: "hidden", zIndex: 1 }}
+              style={{ position: "relative", overflow: "hidden", zIndex: -1 }}
             >
-              <div style={{ width: "100%", paddingBottom: "110.25%" }}></div>
+              <div
+                style={{
+                  width: "100%",
+                  paddingBottom: "110.25%",
+                  height: "550px",
+                }}
+              ></div>
               <img
                 alt=""
                 title=""

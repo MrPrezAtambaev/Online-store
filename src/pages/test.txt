@@ -317,3 +317,27 @@ navbar ---------
     justify-content: center;
   }
 }
+
+
+
+
+
+  <div className="navbar__burger" onClick={() => setShowMenu(!showMenu)}>
+      <div className="navbar__burger_line"></div>
+      <div className="navbar__burger_line"></div>
+      <div className="navbar__burger_line"></div>
+    </div>
+
+    {showMenu && (
+      <div className="navbar_shop--mobile">
+        <a href="/" className="navbar_link">
+          Shop
+        </a>
+        <a href="/about" className="navbar_link">
+          About Us
+        </a>
+        <a href="#" className="navbar_link">
+          Partners
+        </a>
+      </div>
+    )}

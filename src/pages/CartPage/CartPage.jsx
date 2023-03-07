@@ -57,7 +57,7 @@ export default function CartPage() {
                           className="mb-0 text-muted"
                           style={{ color: "black" }}
                         >
-                          {cartLength}
+                          Items: {cartLength}
                         </h6>
                       </div>
                       <hr className="my-4" />
@@ -133,7 +133,7 @@ export default function CartPage() {
                           </div>
                           <div className="col-md-1 col-lg-1 col-xl-1 text-end">
                             <ClearIcon
-                              style={{ color: "black" }}
+                              style={{ color: "black", cursor: "pointer" }}
                               onClick={() => deleteProductFromCart(row.item.id)}
                             />
                           </div>
@@ -155,64 +155,113 @@ export default function CartPage() {
                       </div>
                     </div>
                   </div>
-                  <div className="col-lg-4 bg-grey">
-                    <div className="p-1">
-                      <h3
-                        className="fw-bold mb-5 mt-2 pt-1"
+                </div>
+                <div className="col-lg-6 px-2 py-4">
+                  <h3
+                    className="mb-5 pt-2 text-center fw-bold text-uppercase"
+                    style={{ color: "black" }}
+                  >
+                    Payment
+                  </h3>
+
+                  <form className="mb-5">
+                    <div className="form-outline mb-5">
+                      <input
+                        type="text"
+                        id="typeText"
+                        className="form-control form-control-lg"
+                        siez="17"
+                        value="1234 5678 9012 3457"
+                        minlength="19"
+                        maxlength="19"
+                      />
+                      <label
+                        className="form-label"
+                        htmlFor="typeText"
                         style={{ color: "black" }}
                       >
-                        Summary
-                      </h3>
-                      <hr className="my-4" />
+                        Card Number
+                      </label>
+                    </div>
 
-                      <div className="d-flex justify-content-between mb-4">
-                        <h5
-                          className="text-uppercase"
-                          style={{ color: "black" }}
-                        >
-                          Count:
-                        </h5>
-                        <h5 style={{ color: "black" }}>Price:</h5>
-                      </div>
-                      <h5
-                        className="text-uppercase mb-3"
+                    <div className="form-outline mb-5">
+                      <input
+                        type="text"
+                        id="typeName"
+                        className="form-control form-control-lg"
+                        siez="17"
+                        value="John Smith"
+                      />
+                      <label
+                        className="form-label"
+                        htmlFor="typeName"
                         style={{ color: "black" }}
                       >
-                        Give code
-                      </h5>
+                        Name on card
+                      </label>
+                    </div>
 
-                      <div className="mb-5">
+                    <div className="row">
+                      <div className="col-md-6 mb-5">
                         <div className="form-outline">
                           <input
                             type="text"
-                            id="form3Examplea2"
-                            placeholder="Enter your code"
+                            id="typeExp"
                             className="form-control form-control-lg"
+                            value="01/22"
+                            size="7"
+                            minlength="7"
+                            maxlength="7"
                           />
+                          <label
+                            className="form-label"
+                            htmlFor="typeExp"
+                            style={{ color: "black" }}
+                          >
+                            Expiration
+                          </label>
                         </div>
                       </div>
-
-                      <hr className="my-4" />
-
-                      <div className="d-flex justify-content-between mb-5">
-                        <h5
-                          className="text-uppercase"
-                          style={{ color: "black" }}
-                        >
-                          Total price:
-                        </h5>
-                        <h5 style={{ color: "black" }}>Number of products:</h5>
+                      <div className="col-md-6 mb-5">
+                        <div className="form-outline">
+                          <input
+                            type="password"
+                            id="typeText"
+                            className="form-control form-control-lg"
+                            value="&#9679;&#9679;&#9679;"
+                            size="1"
+                            minlength="3"
+                            maxlength="3"
+                          />
+                          <label
+                            className="form-label"
+                            htmlFor="typeText"
+                            style={{ color: "black" }}
+                          >
+                            Cvv
+                          </label>
+                        </div>
                       </div>
-
-                      <button
-                        type="button"
-                        className="btn btn-dark btn-block btn-lg"
-                        data-mdb-ripple-color="dark"
-                      >
-                        Checkout
-                      </button>
                     </div>
-                  </div>
+                    <button
+                      type="button"
+                      className="btn btn-primary btn-block btn-lg"
+                      style={{ color: "white" }}
+                      onClick={cartCleaner}
+                    >
+                      Buy now
+                    </button>
+
+                    <h5
+                      className="fw-bold mb-5"
+                      style={{ position: "absolute", bottom: "0" }}
+                    >
+                      <a href="/" style={{ color: "black" }}>
+                        <i className="fas fa-angle-left me-2"></i>Back to
+                        shopping
+                      </a>
+                    </h5>
+                  </form>
                 </div>
               </div>
             </div>

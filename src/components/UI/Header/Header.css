@@ -24,3 +24,35 @@
   width: 700px;
   margin: 0; /* Set all margins to 0 */
 }
+@media only screen and (max-width: 768px) {
+  .header_title {
+    margin-top: 20px;
+  }
+  .header_text {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .header_text {
+    width: 650px;
+  }
+  .header_title {
+    width: 650px;
+  }
+  .header_block {
+    padding: 0;
+    width: 660px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .header_block {
+    width: 400px;
+  }
+  .header_text {
+    width: 400px;
+  }
+  .header_title {
+    width: 400px;
+  }
+}

@@ -15,7 +15,7 @@
       "title": "True Wireless",
       "category": "HeadPhones",
       "color": "Black",
-      "price": 1900,
+      "price": 19000,
       "type": "electronics",
       "like": 41,
       "id": 3
@@ -27,7 +27,7 @@
       "color": "White",
       "price": 2000,
       "type": "clothes",
-      "like": 7,
+      "like": 22,
       "id": 4
     },
     {
@@ -37,6 +37,7 @@
       "color": "Red",
       "price": 21111,
       "type": "electronics",
+      "like": 22,
       "id": 5
     },
     {
@@ -46,7 +47,26 @@
       "color": "Black",
       "price": 12313,
       "type": "Headphones",
+      "like": 22,
       "id": 6
+    },
+    {
+      "img": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4oced?ver=6406",
+      "title": "SurFase HeadPhones 2",
+      "category": "HeadPhones",
+      "color": "Black",
+      "price": 12000,
+      "type": "electronics",
+      "id": 7
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/61q+RT4CybS._AC_SX679_.jpg",
+      "title": "TUINYO Bluetooth Headphones Wireless",
+      "category": "HeadPhones",
+      "color": "Pink",
+      "price": 30000,
+      "type": "electronics",
+      "id": 8
     }
   ]
 }
