@@ -33,14 +33,14 @@ const ProductCard = ({ card }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const navigate = useNavigate();
   const [favorite, setFavorite] = useState(false);
-  const [likes, setLike] = useState(false)
+  const [likes, setLike] = useState(false);
 
   const [admin, setAdmin] = useState(false);
 
   const handleChange = (event) => {
     setAuth(event.target.checked);
   };
-  
+
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -50,9 +50,9 @@ const ProductCard = ({ card }) => {
   };
   useEffect(() => {
     // if(localStorage.getItem('username')) {
-      setLikeStorage();
-      // getOneProduct(card.id);
-      // console.log(oneProduct, 'useeefect');
+    setLikeStorage();
+    // getOneProduct(card.id);
+    // console.log(oneProduct, 'useeefect');
     // }
   }, []);
 
@@ -60,41 +60,39 @@ const ProductCard = ({ card }) => {
     let STlikes = JSON.parse(localStorage.getItem("likes"));
     card.like += 1;
     likeProduct(card);
-    STlikes.push(card)
+    STlikes.push(card);
     localStorage.setItem("likes", JSON.stringify(STlikes));
     setLike(true);
   }
 
   function disLike(id) {
-      card.like -= 1
-      likeProduct(card)
-      let STlikes = JSON.parse(localStorage.getItem('likes'))
-      STlikes = STlikes.map((elem) => elem.id !== id)
-      localStorage.setItem('likes', JSON.stringify(STlikes))
-      setLike(false)
+    card.like -= 1;
+    likeProduct(card);
+    let STlikes = JSON.parse(localStorage.getItem("likes"));
+    STlikes = STlikes.map((elem) => elem.id !== id);
+    localStorage.setItem("likes", JSON.stringify(STlikes));
+    setLike(false);
   }
   // const [one , setOne] = useState('');
   // useEffect(()=>{
   //   getOneProduct(card.id);
 
-  // },[])  
+  // },[])
   // console.log(getOneProduct(3) , 'yoyoy');
-  const [id , setId] = useState(null);
-
+  const [id, setId] = useState(null);
 
   const favProduct = () => {
-      const products = JSON.parse(localStorage.getItem("favorites"));
-      products.push(card);
-      localStorage.setItem("favorites", JSON.stringify(products));
-      setFavorite(true);
-    };
-  
+    const products = JSON.parse(localStorage.getItem("favorites"));
+    products.push(card);
+    localStorage.setItem("favorites", JSON.stringify(products));
+    setFavorite(true);
+  };
+
   function delFavorite(id) {
-      let products = JSON.parse(localStorage.getItem('favorites'))
-      products = products.map((elem) => elem.id !== id)
-      localStorage.setItem('favorites', JSON.stringify(products))
-      setFavorite(false)
-      
+    let products = JSON.parse(localStorage.getItem("favorites"));
+    products = products.map((elem) => elem.id !== id);
+    localStorage.setItem("favorites", JSON.stringify(products));
+    setFavorite(false);
   }
 
   return (
@@ -194,18 +192,20 @@ const ProductCard = ({ card }) => {
             </button>
           )}
           {favorite ? (
-            <FavoriteBorderIcon
-              style={{ background: "gray" }}
+            <FavoriteIcon
+              style={{ color: "white" }}
               onClick={delFavorite}
               className="fav_btn"
-            ></FavoriteBorderIcon>
+            ></FavoriteIcon>
           ) : (
             <FavoriteBorderIcon
-              // onClick={favProduct}
-              onClick={()=>{
-                setId(card.id)
-              favProduct()
-              }
+              style={{ color: "gray" }}
+              onClick={() => {
+                setId(card.id);
+                favProduct();
+              }}
+              className="fav_btn"
+            ></FavoriteBorderIcon>
           )}
         </div>
       </div>
