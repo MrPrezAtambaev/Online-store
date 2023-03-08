@@ -41,6 +41,7 @@ const ProductList = () => {
           justifyContent: "center",
           paddingTop: "3rem",
         }}
+        className="pagin"
       >
         <Pagination
           style={{ background: "transparent", color: "white" }}

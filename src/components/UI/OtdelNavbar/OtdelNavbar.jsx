@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 import "../Navbar/Navbar.css";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -20,65 +20,65 @@ import Badge from "@mui/material/Badge";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const OtdelNavbar = () => {
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const {getProducts, setPage} = useProducts()
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
-    const navigate = useNavigate()
-    const [searchParams, setSearchParams] = useSearchParams()
-    const [search, setSearch] = useState(searchParams.get('q') || (''))
-  
-    useEffect(() => {
-      setSearchParams({
-        q: search
-      });
-    }, [search, ])
-    
-    useEffect(() => {
-      getProducts()
-      setPage(1)
-    }, [searchParams])
-  
-    const handleOpenNavMenu = (event) => {
-      setAnchorElNav(event.currentTarget);
-    };
-    const handleOpenUserMenu = (event) => {
-      setAnchorElUser(event.currentTarget);
-    };
-  
-    const handleCloseNavMenu = () => {
-      setAnchorElNav(null);
-    };
-  
-    const handleCloseUserMenu = () => {
-      setAnchorElUser(null);
-    };
-  
-    const settings = [
-        {
-          type: "Register",
-          path: "/register",
-        },
-        {
-          type: "Login",
-          path: "/login",
-        },
-      ];
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const { getProducts, setPage } = useProducts();
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
 
-      const { logout, user, checkAuth } = useAuth();
-      const { cartLength } = useCart();
-    
-      React.useEffect(() => {
-        if (localStorage.getItem("token")) {
-          checkAuth();
-        }
-      }, []);
+  useEffect(() => {
+    setSearchParams({
+      q: search,
+    });
+  }, [search]);
+
+  useEffect(() => {
+    getProducts();
+    setPage(1);
+  }, [searchParams]);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
+  };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+
+  const settings = [
+    {
+      type: "Register",
+      path: "/register",
+    },
+    {
+      type: "Login",
+      path: "/login",
+    },
+  ];
+
+  const { logout, user, checkAuth } = useAuth();
+  const { cartLength } = useCart();
+
+  React.useEffect(() => {
+    if (localStorage.getItem("token")) {
+      checkAuth();
+    }
+  }, []);
   return (
     <>
       <div style={{ background: "black" }}>
         <div className="abs-img">
           <img
-            style={{ height: "500px", width: "100%" }}
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK5ZFR0qIR1ZHkqXJaNm1JYlpNyLvCBkVrCA&usqp=CAU"
+            style={{ height: "600px", width: "100%" }}
+            src="https://media.graphassets.com/resize=w:1920,fit:crop/quality=value:65/auto_image/compress/zhbwLugYSXuAwQMaEN9m"
             alt=""
           />
 
@@ -116,8 +116,8 @@ const OtdelNavbar = () => {
 
             <div className="navbar__icons">
               <input
-                value={search} 
-                onChange={e => setSearch(e.target.value)}
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search"
                 type="search"
                 name=""
@@ -159,20 +159,23 @@ const OtdelNavbar = () => {
                   onClose={handleCloseUserMenu}
                 >
                   {localStorage.getItem("username") ? (
-                   <>
-                    <MenuItem onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center" onClick={logout}>
-                        Logout
-                      </Typography>
-                    </MenuItem>
+                    <>
+                      <MenuItem onClick={handleCloseUserMenu}>
+                        <Typography textAlign="center" onClick={logout}>
+                          Logout
+                        </Typography>
+                      </MenuItem>
                       <hr />
 
                       <MenuItem onClick={handleCloseUserMenu}>
-                      <Typography textAlign="center" onClick={() => navigate('/favorites')}>
-                         Favorites
-                      </Typography>
+                        <Typography
+                          textAlign="center"
+                          onClick={() => navigate("/favorites")}
+                        >
+                          Favorites
+                        </Typography>
                       </MenuItem>
-                   </>
+                    </>
                   ) : (
                     settings.map((setting) => (
                       <MenuItem
@@ -195,7 +198,7 @@ const OtdelNavbar = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default OtdelNavbar
+export default OtdelNavbar;
