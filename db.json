@@ -21,7 +21,12 @@
       "price": 19000,
       "type": "electronics",
       "like": 41,
-      "comments": [],
+      "comments": [
+        {
+          "item": "ss",
+          "id": 12345
+        }
+      ],
       "features": "Технология Dual Noise Sensor улавливает окружающий шум с помощью четырех микрофонов на чашах наушников и передает данные в HD-процессор QN1, который выполняет шумоподавление в режиме реального времени с учетом акустических характеристик окружающей среды. С новой однокристальной аудиосистемой и поддержкой Bluetooth® он с частотой 700 раз в секунду оценивает параметры музыки и шума, акустические характеристики пространства между динамиками и ушными раковинами и соответственно корректирует звуковой сигнал.",
       "id": 2
     },
@@ -70,7 +75,20 @@
       "price": 21111,
       "type": "electronics",
       "like": 34,
-      "comments": [],
+      "comments": [
+        {
+          "item": "ss",
+          "id": 1678277426192
+        },
+        {
+          "item": "ssss",
+          "id": 1678277426192
+        },
+        {
+          "item": "ssssdd",
+          "id": 1678277426192
+        }
+      ],
       "features": "Signature Sennheiser sound, Adaptive noise cancellation, High-quality voice capture, Splash-resistant IPX4, Perfect fit, Up to 28 hours of playback, Wireless charging",
       "id": 5
     },
@@ -81,12 +99,21 @@
       "color": "Black",
       "price": 12313,
       "type": "Headphones",
-      "like": 57,
+      "like": 147,
       "comments": [
         {
-          "item": "dawdawd",
-          "id": 1678253887492
+          "item": "sss",
+          "id": 1678254332638
+        },
+        {
+          "item": "dd",
+          "id": 1678255996953
+        },
+        {
+          "item": "ss",
+          "id": 1678258948815
         }
+      ],
       ],
       "features": "Signature Sennheiser sound, Adaptive noise cancellation, High-quality voice capture, Splash-resistant IPX4, Perfect fit, Up to 28 hours of playback, Wireless charging",
       "id": 6
@@ -147,7 +174,6 @@
         }
       ],
       "features": "Find your gateway to serenity and personal privacy with the Creative Zen Hybrid!\n\nFeaturing Hybrid Active Noise Cancellation for a more peaceful time and Ambient Mode when you need to be aware of your surroundings, get your much needed reprieve as and when you need them.\n\nThis pair of over-ear headphones is the perfect combination of versatility and performance—wireless or wired, outdoors or indoors—and is fitted with a noise-cancelling microphone that can handle any impromptu calls. To top it off, its long-lasting battery life of up to 27 hours even with ANC enabled also means you can power through an entire day without distractions.",
-
       "id": 9
     },
     {
@@ -157,7 +183,7 @@
       "color": "White",
       "price": 12000,
       "type": "electronics",
-      "like": 88,
+      "like": 87,
       "comments": [
         {
           "item": "Ol High Lelush",
@@ -185,9 +211,10 @@
       "category": "Headphones",
       "color": "White",
       "price": 10000,
-      "type": "Over-ear headphones",
-      "like": 100,
+      "type": "HeadPhones",
+      "like": 101,
       "comments": [],
+      "type": "Over-ear headphones",
       "features": "Signature Sennheiser sound, Adaptive noise cancellation, High-quality voice capture, Splash-resistant IPX4, Perfect fit, Up to 28 hours of playback, Wireless charging",
       "id": 12
     },
@@ -199,7 +226,24 @@
       "price": 15000,
       "type": "electronics",
       "like": 340,
-      "comments": [],
+      "comments": [
+        {
+          "item": "ввв",
+          "id": 1678262010819
+        },
+        {
+          "item": "вввотл",
+          "id": 1678262010819
+        },
+        {
+          "item": "fdc",
+          "id": 1678268281219
+        },
+        {
+          "item": "wdfg",
+          "id": 1678268470607
+        }
+      ],
       "features": "Over-ear, open-back, Transducer type Planar Magnetic, Magnetic structure Fluxor™ magnet array, Phase management Fazor™, Magnet type Neodymium N50, Diaphragm type Ultra-Thin Uniforce™, Transducer size 90 mm, Maximum SPL >130dB, Frequency response 5Hz – 50kHz, THD <0.1% @ 100 dB SPL, 1kHz, Sensitivity 100 dB/1mW (at Drum Reference Point), Impedance 18 ohms, Max power handling 5W RMS, Min recommended power >100mW, Recommended power level >250mW, Weight 495g (20% reduction over the LCD-X)",
       "id": 13
     },

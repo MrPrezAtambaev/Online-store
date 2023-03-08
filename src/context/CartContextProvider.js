@@ -38,7 +38,6 @@ const CartContextProvider = ({ children }) => {
         products: [],
         totalPrice: 0,
       };
-
       localStorage.setItem("cart", JSON.stringify(cart));
     }
 

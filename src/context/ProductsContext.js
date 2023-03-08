@@ -52,15 +52,16 @@ const ProductsContextProvider = ({children}) => {
     }
 
     async function getOneProduct(id) {
-        dispatch({
-            type: 'GET_ONE_PRODUCTS',
-            payload: null
-        })
         const {data} = await axios(`${API}/${id}`)
+        // dispatch({
+        //     type: 'GET_ONE_PRODUCTS',
+        //     payload: null
+        // })
         dispatch({
             type: 'GET_ONE_PRODUCTS',
             payload: data
         })
+        
     }
 
     async function editedProduct(newProduct) {
@@ -73,8 +74,9 @@ const ProductsContextProvider = ({children}) => {
         getProducts()
     }
 
-    async function deleteComment(id) {
-        await axios.delete(`${API}/${id}`)
+    async function deleteComment(id, comID) {
+        await axios.delete(`${API}/${id}/comments/${comID}`)
+        getOneProduct(id)
     }
 
     const fetchByParams = (query, value) => {

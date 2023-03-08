@@ -25,6 +25,7 @@ const ProductList = () => {
     const end = begin + itemsOnPage;
     return products.slice(begin, end);
   }
+console.log(currentData()[0]?.id);
 
   return (
     <>

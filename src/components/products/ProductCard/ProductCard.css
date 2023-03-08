@@ -1,8 +1,8 @@
 .products_db {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: space-between;
+  width: 80%;
   margin: 0 auto;
 }
 .product_card {
