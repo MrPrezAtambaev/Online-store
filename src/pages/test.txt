@@ -27,3 +27,13 @@
               <h1>Error</h1>
             )}
           </Typography>
+
+
+
+          <form>
+        <input type="text" />
+
+        <label htmlFor="">New Username</label>
+        <input onChange={handleInp} type="text" />
+      </form>
+      <button onClick={patchUsername}> Putch </button>

@@ -35,6 +35,7 @@ const Navbar = () => {
   const { setPage } = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("q") || "");
+  const { avatarUrl } = useProducts();
 
   useEffect(() => {
     setSearchParams({
@@ -169,7 +170,7 @@ const Navbar = () => {
           <Box sx={{ flexGrow: 0, paddingRight: "1rem" }}>
             <Tooltip title="Profile">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt={user} src="..." />
+                <Avatar src={avatarUrl} alt={user} />
               </IconButton>
             </Tooltip>
             <Menu

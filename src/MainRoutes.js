@@ -21,8 +21,11 @@ import OtdelNavbar from "./components/UI/OtdelNavbar/OtdelNavbar";
 import FavAndLikeContextProvider from "./context/FavAndLikeContextProvider";
 import LikeContextProvider from "./context/LikeContextProvider";
 import Profile from "./components/UI/Profile/Profile";
+import { useProducts } from "./context/ProductsContext";
 
 const MainRoutes = () => {
+  // const { avatarUrl } = useProducts();
+
   const PUBLIC_ROUTES = [
     {
       link: "/register",
@@ -36,7 +39,11 @@ const MainRoutes = () => {
     },
     {
       link: "/admin",
-      element: <AdminPage />,
+      element: (
+        <>
+          <OtdelNavbar /> <AdminPage />{" "}
+        </>
+      ),
       id: 3,
     },
     {
@@ -67,7 +74,7 @@ const MainRoutes = () => {
       link: "/about",
       element: (
         <>
-          <OtdelNavbar/>
+          <Navbar />
           <AboutUs />
           <OrderForm />
           <Footer />
@@ -99,6 +106,7 @@ const MainRoutes = () => {
       element: (
         <>
           {" "}
+          <OtdelNavbar />
           <Profile />
         </>
       ),

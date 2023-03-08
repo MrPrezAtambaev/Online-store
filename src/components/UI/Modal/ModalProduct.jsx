@@ -31,7 +31,6 @@ const ModalProduct = ({ card }) => {
   // useEffect(() => {
   //   getOneProduct(card.id)
   // }, [])
- 
 
   const handleInp = (e) => {
     let obj = {
@@ -43,59 +42,9 @@ const ModalProduct = ({ card }) => {
   };
 
   function commentProduct() {
-    card.comments.push(comment)
-    likeProduct(card)
-    console.log(card.comments)
-  }
-
-  return (
-        <>
-        <div style={{display: 'flex', alignItems: 'center'}} >
-         <Button  sx={{color: 'gray'}} onClick={handleOpen} >
-            Review
-         </Button>
-                  <>
-                    <h1 style={{fontSize: '17px', paddingTop: '7px', padding: ''}} >{card.comments.length}</h1>
-                  </>
-        </div>
-            <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-            >
-            <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  <input name='item' value={comment.item} onChange={handleInp} type="text" />
-                  <button onClick={commentProduct} >
-                   Review 
-                  </button>
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    {card? (
-                      <>
-                        {card.comments.map(elem => (
-                          <div key={elem.id}>
-                            <h1>{user}</h1>
-                            <h1 style={{color: 'black'}}>{elem.item}</h1>
-                            <button onClick={() => deleteComment(card.id, elem.id)}>Delete</button>
-                          </div>
-
-                        ))}
-                      </>
-                    ) : (
-                      <h1>Error</h1>
-                    )}
-                </Typography>
-            </Box>
-        </Modal>
-        </>
-  )
-}
-=======
-    oneProduct.comments.push(comment);
-    likeProduct(oneProduct);
-    console.log(oneProduct.comments);
+    card.comments.push(comment);
+    likeProduct(card);
+    console.log(card.comments);
   }
 
   return (
@@ -112,10 +61,10 @@ const ModalProduct = ({ card }) => {
         >
           Review
         </Button>
-        {oneProduct ? (
+        {card ? (
           <>
             <h1
-              key={oneProduct.id}
+              key={card.id}
               style={{
                 fontSize: "17px",
                 paddingTop: "7px",
@@ -127,7 +76,7 @@ const ModalProduct = ({ card }) => {
                 left: "-275px",
               }}
             >
-              {oneProduct.comments.length}
+              {card.comments.length}
             </h1>
           </>
         ) : (
@@ -160,9 +109,9 @@ const ModalProduct = ({ card }) => {
             ></SendIcon>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {oneProduct ? (
+            {card ? (
               <>
-                {oneProduct.comments.map((elem) => (
+                {card.comments.map((elem) => (
                   <div
                     style={{
                       display: "flex",
