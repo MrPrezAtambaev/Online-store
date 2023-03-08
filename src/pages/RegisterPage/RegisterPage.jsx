@@ -75,9 +75,9 @@ const RegisterPage = () => {
             checked={formData.isAdmin}
             name="isAdmin"
             onChange={(e) => {
-              setAdmin(e.target.checked);
-              handleSubmit2(e);
               handleInputChange(e);
+              handleSubmit2(e);
+              setAdmin(e.target.checked);
             }}
           />
           <label>Admin</label>

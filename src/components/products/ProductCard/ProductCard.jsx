@@ -28,7 +28,7 @@ const ProductCard = ({ card }) => {
   const navigate = useNavigate();
   const [favorite, setFavorite] = useState(false);
   const [likes, setLike] = useState(false)
-  
+
   const [admin, setAdmin] = useState(false);
   useEffect(() => {
     setLikeStorage()
@@ -37,7 +37,7 @@ const ProductCard = ({ card }) => {
   const handleChange = (event) => {
     setAuth(event.target.checked);
   };
-  
+
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -45,12 +45,12 @@ const ProductCard = ({ card }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
+  
   function addLike() {
     let STlikes = JSON.parse(localStorage.getItem("likes"));
     card.like += 1;
     likeProduct(card);
-    STlikes.push(card)
+    STlikes.push(card);
     localStorage.setItem("likes", JSON.stringify(STlikes));
     setLike(true);
   }
@@ -65,14 +65,16 @@ const ProductCard = ({ card }) => {
   }
 
   const [id , setId] = useState(null);
+  // },[])
+  // console.log(getOneProduct(3) , 'yoyoy');
 
   const favProduct = () => {
-      const products = JSON.parse(localStorage.getItem("favorites"));
-      products.push(card);
-      localStorage.setItem("favorites", JSON.stringify(products));
-      setFavorite(true);
-    };
-  
+    const products = JSON.parse(localStorage.getItem("favorites"));
+    products.push(card);
+    localStorage.setItem("favorites", JSON.stringify(products));
+    setFavorite(true);
+  };
+
   function delFavorite(id) {
       let products = JSON.parse(localStorage.getItem('favorites'))
       products = products.map((elem) => elem.id !== id)
@@ -178,18 +180,20 @@ const ProductCard = ({ card }) => {
           )}
           <>
           {favorite ? (
-            <FavoriteBorderIcon
-              style={{ background: "gray" }}
+            <FavoriteIcon
+              style={{ color: "white" }}
               onClick={delFavorite}
               className="fav_btn"
-            ></FavoriteBorderIcon>
+            ></FavoriteIcon>
           ) : (
             <FavoriteBorderIcon
-              // onClick={favProduct}
-              onClick={()=>{
-                setId(card.id)
-                favProduct()}}>
-            </FavoriteBorderIcon>
+              style={{ color: "gray" }}
+              onClick={() => {
+                setId(card.id);
+                favProduct();
+              }}
+              className="fav_btn"
+            ></FavoriteBorderIcon>
           )}
           </>
         </div>

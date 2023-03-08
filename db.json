@@ -20,7 +20,7 @@
       "color": "Black",
       "price": 19000,
       "type": "electronics",
-      "like": 52,
+      "like": 42,
       "comments": [
         {
           "item": "ss",
@@ -46,7 +46,7 @@
       "color": "Black",
       "price": 19000,
       "type": "electronics",
-      "like": 43,
+      "like": 44,
       "comments": [
         {
           "item": "dwa",
@@ -157,6 +157,10 @@
         {
           "item": "Hi",
           "id": 1678260700429
+        },
+        {
+          "item": "hjh",
+          "id": 1678293133477
         }
       ],
       "features": "\n Length 8.03 (204 mm)\n Width 7.68 (195 mm)\n Depth 1.89 (48 mm)\n Weight\n 0.64 lbs (0.29 kg)\n Exterior\n Colors: Light Gray Matte Black3\n Frequency response\n 20 – 20kHz\n Noise cancellation\n Up to 30 dB for active noise cancellation\n Up to 40 dB for passive noise cancellation\n Speaker\n 40 mm Free Edge driver\n Sound pressure level output\n Up to 115 dB (1kHz, 1Vrms via cable connector with power on)\n Up to 115 dB (1kHz, 0dBFS over Bluetooth® connection)\n Charging\n Full charge in less than 2 hours\n Battery Life\n Up to 18.5 hours of music listening time1 or up to 15 hours of voice calling on Microsoft Teams2\n USB cord length\n 59.00 in (1.5 m)\n Audio cable length\n 78.74 in (1.2 m)\n Inputs\n USB-C™ connector\n 3.5 mm audio connector\n Sensors\n N/A\n Compatibility\n Windows 11 Home/Pro, Windows 10, Android 9 or 10, IOS 12 or 13, Bluetooth 4.1/4.2/5.0**\n Audio Codec\n SBC and aptX™\n Buttons/controls\n Power button, Mute button, Volume dial (right ear), Noise Cancellation dial (left ear)\n What’s in the box\n Surface Headphones 2\n Carrying case\n USB cable\n Audio cable\n Quick start guide\n Safety and warranty documents\n Warranty\n 1-year limited hardware warranty",
@@ -244,7 +248,7 @@
       "category": "wired",
       "color": "Black",
       "price": 15000,
-      "type": "electronics",
+      "type": "wired",
       "like": 340,
       "comments": [
         {

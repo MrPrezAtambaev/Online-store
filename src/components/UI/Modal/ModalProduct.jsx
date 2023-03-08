@@ -31,7 +31,6 @@ const ModalProduct = ({ card }) => {
   // useEffect(() => {
   //   getOneProduct(card.id)
   // }, [])
- 
 
   const handleInp = (e) => {
     let obj = {
