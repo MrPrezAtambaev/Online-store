@@ -73,6 +73,10 @@ const ProductsContextProvider = ({children}) => {
         getProducts()
     }
 
+    async function deleteComment(id) {
+        await axios.delete(`${API}/${id}`)
+    }
+
     const fetchByParams = (query, value) => {
         const search = new URLSearchParams (location.search);
         if(value == 'all') {
@@ -104,7 +108,8 @@ const ProductsContextProvider = ({children}) => {
         setPage,
         page,
         setLikeStorage,
-        likeProduct
+        likeProduct,
+        deleteComment
     }
 
   return (

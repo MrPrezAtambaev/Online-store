@@ -3,6 +3,7 @@ import "./ProductCard.css";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../../context/ProductsContext";
 import { useCart } from "../../../context/CartContextProvider";
+import ModalProduct from "../../UI/Modal/ModalProduct";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -62,6 +63,12 @@ const ProductCard = ({ card }) => {
     setLike(true);
   }
 
+  // function delLike (id) {
+  //   let STlikes = JSON.parse(localStorage.getItem('likes'))
+  //   STlikes = STlikes.map((elem) => elem.id !== id)
+  //   localStorage.setItem('likes', JSON.stringify(STlikes))
+  // }
+
   const favProduct = () => {
     const products = JSON.parse(localStorage.getItem("favorites"));
     products.push(oneProduct);
@@ -69,6 +76,23 @@ const ProductCard = ({ card }) => {
     setFavorite(true);
   };
 
+  function delFavorite(id) {
+    let products = JSON.parse(localStorage.getItem('favorites'))
+    products = products.map((elem) => elem.id !== id)
+    localStorage.setItem('favorites', JSON.stringify(products))
+    setFavorite(false)
+  }
+
+  function disLike (id) {
+    oneProduct.like -= 1
+    likeProduct(oneProduct)
+
+    let STlikes = JSON.parse(localStorage.getItem('likes'))
+    STlikes = STlikes.map((elem) => elem.id !== id)
+    localStorage.setItem('likes', JSON.stringify(STlikes))
+    setLike(false)
+   }
+   
   function disLike() {
     oneProduct.like -= 1;
     likeProduct(oneProduct);
@@ -156,6 +180,27 @@ const ProductCard = ({ card }) => {
             Buy Now
           </button>
 
+          {likes? (
+             <button
+             onClick={() => disLike(card.id)}
+             className="prd_content_btn_2"
+           >
+             Dislike
+           </button>
+          ): (
+             <button
+             style={{background: 'red'}} 
+             onClick={addLike}
+             className="prd_content_btn_2"
+           >
+             Like
+           </button>
+          )}
+          {favorite? (
+            <button
+            style={{background: 'gray'}} 
+            onClick={() => delFavorite(card.id)}
+            className="fav_btn">
           {likes ? (
             <button onClick={disLike} className="prd_content_btn_2">
               Dislike
