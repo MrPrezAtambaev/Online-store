@@ -15,6 +15,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
+import ModalProduct from "../../UI/Modal/ModalProduct";
 
 
 const ProductCard = ({ card }) => {
@@ -56,6 +57,12 @@ const ProductCard = ({ card }) => {
     setLike(true)
   }
 
+  // function delLike (id) {
+  //   let STlikes = JSON.parse(localStorage.getItem('likes'))
+  //   STlikes = STlikes.map((elem) => elem.id !== id)
+  //   localStorage.setItem('likes', JSON.stringify(STlikes))
+  // }
+
   const favProduct = () => {
       const products = JSON.parse(localStorage.getItem('favorites'))
       products.push(oneProduct)
@@ -63,11 +70,21 @@ const ProductCard = ({ card }) => {
       setFavorite(true)
   }
 
-  function disLike () {
+  function delFavorite(id) {
+    let products = JSON.parse(localStorage.getItem('favorites'))
+    products = products.map((elem) => elem.id !== id)
+    localStorage.setItem('favorites', JSON.stringify(products))
+    setFavorite(false)
+  }
+
+  function disLike (id) {
     oneProduct.like -= 1
     likeProduct(oneProduct)
+
+    let STlikes = JSON.parse(localStorage.getItem('likes'))
+    STlikes = STlikes.map((elem) => elem.id !== id)
+    localStorage.setItem('likes', JSON.stringify(STlikes))
     setLike(false)
-    console.log(oneProduct)
   }
 
 
@@ -147,7 +164,7 @@ const ProductCard = ({ card }) => {
 
           {likes? (
              <button
-             onClick={disLike}
+             onClick={() => disLike(card.id)}
              className="prd_content_btn_2"
            >
              Dislike
@@ -164,7 +181,7 @@ const ProductCard = ({ card }) => {
           {favorite? (
             <button
             style={{background: 'gray'}} 
-            onClick={favProduct}
+            onClick={() => delFavorite(card.id)}
             className="fav_btn">
             </button>
           ) : (
@@ -174,8 +191,6 @@ const ProductCard = ({ card }) => {
              className="fav_btn"> 
              </button>
           )}
-          
-            
         </div>
       </div>
     </div>
