@@ -156,7 +156,7 @@ export default function CartPage() {
                     </div>
                   </div>
                 </div>
-                <div className="col-lg-6 px-2 py-4">
+                <div className="col-lg-10 px-5 py-4 m-0 w-93 mx-auto">
                   <h3
                     className="mb-5 pt-2 text-center fw-bold text-uppercase"
                     style={{ color: "black" }}
@@ -164,7 +164,7 @@ export default function CartPage() {
                     Payment
                   </h3>
 
-                  <form className="mb-5">
+                  <form className="mb-5 w-50">
                     <div className="form-outline mb-5">
                       <label
                         className="form-label"

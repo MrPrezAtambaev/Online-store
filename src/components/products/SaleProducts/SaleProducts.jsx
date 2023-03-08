@@ -85,10 +85,43 @@ const SaleProducts = () => {
               aria-controls="panel1a-content"
               id="panel1a-header"
             >
-              <Typography>Sort By</Typography>
+              <Typography>Features</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>fghj</Typography>
+              <Typography>
+                <FormControl>
+                  <FormLabel id="demo-radio-buttons-group-label">
+                    Features
+                  </FormLabel>
+                  <RadioGroup
+                    aria-labelledby="demo-radio-buttons-group-label"
+                    defaultValue="female"
+                    name="radio-buttons-group"
+                    onChange={(e) => fetchByParams("features", e.target.value)}
+                  >
+                    <FormControlLabel
+                      value="jj"
+                      control={<Radio />}
+                      label="All"
+                    />
+                    <FormControlLabel
+                      value="hh"
+                      control={<Radio />}
+                      label="Wired"
+                    />
+                    <FormControlLabel
+                      value="HeadPhones"
+                      control={<Radio />}
+                      label="HeadPhones"
+                    />
+                    <FormControlLabel
+                      value="ll"
+                      control={<Radio />}
+                      label="Electronics"
+                    />
+                  </RadioGroup>
+                </FormControl>
+              </Typography>
             </AccordionDetails>
           </Accordion>
           <hr />

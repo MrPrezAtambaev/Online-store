@@ -191,6 +191,14 @@ const Navbar = () => {
               {localStorage.getItem("username") ? (
                 <>
                   <MenuItem onClick={handleCloseUserMenu}>
+                    <Typography
+                      textAlign="center"
+                      onClick={() => navigate("/profile")}
+                    >
+                      Profile
+                    </Typography>
+                  </MenuItem>
+                  <MenuItem onClick={handleCloseUserMenu}>
                     <Typography textAlign="center" onClick={logout}>
                       Logout
                     </Typography>

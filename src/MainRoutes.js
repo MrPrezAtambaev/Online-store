@@ -18,6 +18,7 @@ import SaleProducts from "./components/products/SaleProducts/SaleProducts";
 import LikesPage from "./pages/LikesPage/LikesPage";
 import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 import OtdelNavbar from "./components/UI/OtdelNavbar/OtdelNavbar";
+import Profile from "./components/UI/Profile/Profile";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -90,6 +91,16 @@ const MainRoutes = () => {
         </>
       ),
       id: 8,
+    },
+    {
+      link: "/profile",
+      element: (
+        <>
+          {" "}
+          <Profile />
+        </>
+      ),
+      id: 9,
     },
   ];
 
