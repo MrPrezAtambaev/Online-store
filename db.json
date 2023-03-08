@@ -128,6 +128,24 @@
       "price": 34000,
       "type": "electronics",
       "id": 14
+    },
+    {
+      "img": "https://target.scene7.com/is/image/Target/GUEST_d481ae28-76cf-45fc-a28b-0dca314d449c?wid=488&hei=488&fmt=pjpeg",
+      "title": "AirPods Pro(2 Gen)",
+      "category": "HeadPhones",
+      "color": "White",
+      "price": 12000,
+      "type": "HeadPhones",
+      "id": 15
+    },
+    {
+      "img": "https://media.istockphoto.com/id/835148968/photo/red-headphones-isolated.jpg?s=170667a&w=0&k=20&c=n81TvgWs0iMs5LEqSI_ULpChfsQApeAW_Gq428Rl8Ls=",
+      "title": "Beats Solo 3",
+      "category": "HeadPhones",
+      "color": "Red",
+      "price": 32000,
+      "type": "HeadPhones",
+      "id": 16
     }
   ]
 }
