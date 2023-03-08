@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import "./RegisterPage.css";
 
@@ -12,6 +12,33 @@ const RegisterPage = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     register(username, password);
+  };
+
+  const [formData, setFormData] = useState({
+    // other form fields
+    isAdmin: false,
+  });
+
+  const handleInputChange = (event) => {
+    const target = event.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit2 = (event) => {
+    event.preventDefault();
+
+    // Save isAdmin value to local storage if checkbox is checked
+    if (formData.isAdmin) {
+      localStorage.setItem("admin", true);
+    } else {
+      localStorage.setItem("admin", false);
+    }
   };
 
   return (
@@ -45,7 +72,13 @@ const RegisterPage = () => {
         <div className="user-box">
           <input
             type="checkbox"
-            onChange={(e) => setAdmin(e.target.value)}
+            checked={formData.isAdmin}
+            name="isAdmin"
+            onChange={(e) => {
+              setAdmin(e.target.checked);
+              handleSubmit2(e);
+              handleInputChange(e);
+            }}
           />
           <label>Admin</label>
         </div>

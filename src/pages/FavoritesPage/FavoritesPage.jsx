@@ -7,6 +7,7 @@ const FavoritesPage = () => {
   const fav = JSON.parse(localStorage.getItem("favorites"));
   console.log(fav);
 
+
   return (
     <>
       {fav?.map((card) => (

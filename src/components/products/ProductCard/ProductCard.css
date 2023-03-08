@@ -74,9 +74,9 @@
   margin-top: 1rem;
   width: 20px;
   height: 20px;
-  border: 2px solid white;
+  border: 2px solid transparent;
   border-radius: 50%;
-  background-color: white;
+  background-color: transparent;
 }
 /* .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root.Mui-disabled {
   color: white;

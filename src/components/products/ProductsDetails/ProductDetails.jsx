@@ -102,13 +102,7 @@ const ProductDetails = () => {
                       About this product
                     </p>
                     <p className="product-description mb-4">
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Quis assumenda voluptatem tempore dolor quod. Expedita,
-                      id, minus similique dolor sed adipisci aliquam natus amet
-                      doloremque delectus cupiditate? Sint, quasi, ad
-                      necessitatibus omnis quaerat tenetur corporis porro aut,
-                      natus ex ab id vel odit veniam fugiat temporibus aperiam
-                      quia rem minima!
+                      {oneProduct.features}
                     </p>
                     <hr />
                     <p className="product-title mt-4 mb-1">

@@ -5,13 +5,9 @@ import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAuth } from "../../../contexts/AuthContextProvider";
 import { useProducts } from "../../../context/ProductsContext";
@@ -194,6 +190,14 @@ const Navbar = () => {
             >
               {localStorage.getItem("username") ? (
                 <>
+                  <MenuItem onClick={handleCloseUserMenu}>
+                    <Typography
+                      textAlign="center"
+                      onClick={() => navigate("/profile")}
+                    >
+                      Profile
+                    </Typography>
+                  </MenuItem>
                   <MenuItem onClick={handleCloseUserMenu}>
                     <Typography textAlign="center" onClick={logout}>
                       Logout

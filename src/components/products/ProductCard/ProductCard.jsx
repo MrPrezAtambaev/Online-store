@@ -3,19 +3,21 @@ import "./ProductCard.css";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../../context/ProductsContext";
 import { useCart } from "../../../context/CartContextProvider";
+import ModalProduct from "../../UI/Modal/ModalProduct";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import AccountCircle from "@mui/icons-material/AccountCircle";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Switch from "@mui/material/Switch";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const ProductCard = ({ card }) => {
   const {
@@ -30,6 +32,8 @@ const ProductCard = ({ card }) => {
   const { addProductToCart, checkProductInCart } = useCart();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
+
+  const [admin, setAdmin] = useState(false);
 
   const handleChange = (event) => {
     setAuth(event.target.checked);
@@ -62,12 +66,35 @@ const ProductCard = ({ card }) => {
     setLike(true);
   }
 
+  // function delLike (id) {
+  //   let STlikes = JSON.parse(localStorage.getItem('likes'))
+  //   STlikes = STlikes.map((elem) => elem.id !== id)
+  //   localStorage.setItem('likes', JSON.stringify(STlikes))
+  // }
+
   const favProduct = () => {
     const products = JSON.parse(localStorage.getItem("favorites"));
     products.push(oneProduct);
     localStorage.setItem("favorites", JSON.stringify(products));
     setFavorite(true);
   };
+
+  function delFavorite(id) {
+    let products = JSON.parse(localStorage.getItem("favorites"));
+    products = products.map((elem) => elem.id !== id);
+    localStorage.setItem("favorites", JSON.stringify(products));
+    setFavorite(false);
+  }
+
+  function disLike(id) {
+    oneProduct.like -= 1;
+    likeProduct(oneProduct);
+
+    let STlikes = JSON.parse(localStorage.getItem("likes"));
+    STlikes = STlikes.map((elem) => elem.id !== id);
+    localStorage.setItem("likes", JSON.stringify(STlikes));
+    setLike(false);
+  }
 
   function disLike() {
     oneProduct.like -= 1;
@@ -82,59 +109,61 @@ const ProductCard = ({ card }) => {
     <div className="product_card">
       <Box sx={{ flexGrow: 1, marginRight: "4rem", paddingTop: "2rem" }}>
         <AppBar sx={{ backgroundColor: "black" }} position="static">
-          <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              {/* <MenuIcon /> */}
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Admin
-            </Typography>
-            {auth && (
-              <div>
-                <IconButton
-                  size="large"
-                  aria-label="account of current user"
-                  aria-controls="menu-appbar"
-                  aria-haspopup="true"
-                  onClick={handleMenu}
-                  color="inherit"
-                >
-                  <AccountCircle />
-                </IconButton>
-                <Menu
-                  id="menu-appbar"
-                  anchorEl={anchorEl}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorEl)}
-                  onClose={handleClose}
-                >
-                  <MenuItem onClick={() => navigate(`/edit/${card.id}`)}>
-                    Edit
-                  </MenuItem>
-                  <MenuItem onClick={() => deleteProduct(card.id)}>
-                    Detete
-                  </MenuItem>
-                  <MenuItem onClick={() => navigate(`/details/${card.id}`)}>
-                    Details
-                  </MenuItem>
-                </Menu>
-              </div>
-            )}
-          </Toolbar>
+          {localStorage.getItem("admin") === "true" && (
+            <Toolbar>
+              <IconButton
+                size="large"
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                sx={{ mr: 2 }}
+              >
+                {/* <MenuIcon /> */}
+              </IconButton>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                Admin
+              </Typography>
+              {auth && (
+                <div>
+                  <IconButton
+                    size="large"
+                    aria-label="account of current user"
+                    aria-controls="menu-appbar"
+                    aria-haspopup="true"
+                    onClick={handleMenu}
+                    color="inherit"
+                  >
+                    <MoreVertIcon />
+                  </IconButton>
+                  <Menu
+                    id="menu-appbar"
+                    anchorEl={anchorEl}
+                    anchorOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    open={Boolean(anchorEl)}
+                    onClose={handleClose}
+                  >
+                    <MenuItem onClick={() => navigate(`/edit/${card.id}`)}>
+                      Edit
+                    </MenuItem>
+                    <MenuItem onClick={() => deleteProduct(card.id)}>
+                      Detete
+                    </MenuItem>
+                    <MenuItem onClick={() => navigate(`/details/${card.id}`)}>
+                      Details
+                    </MenuItem>
+                  </Menu>
+                </div>
+              )}
+            </Toolbar>
+          )}
         </AppBar>
       </Box>
 
@@ -157,12 +186,16 @@ const ProductCard = ({ card }) => {
           </button>
 
           {likes ? (
-            <button onClick={disLike} className="prd_content_btn_2">
+            <button
+              onClick={() => disLike(card.id)}
+              className="prd_content_btn_2"
+              style={{ color: "white" }}
+            >
               Dislike
             </button>
           ) : (
             <button
-              style={{ background: "red", color: "white" }}
+              style={{ background: "red" }}
               onClick={addLike}
               className="prd_content_btn_2"
             >
@@ -171,15 +204,16 @@ const ProductCard = ({ card }) => {
           )}
           {favorite ? (
             <FavoriteBorderIcon
-              style={{ background: "gray" }}
-              onClick={favProduct}
+              style={{ color: "gray" }}
+              onClick={() => delFavorite(card.id)}
               className="fav_btn"
             ></FavoriteBorderIcon>
           ) : (
-            <FavoriteBorderIcon
-              onClick={favProduct}
+            <FavoriteIcon
+              style={{ color: "white" }}
+              onClick={() => favProduct(card.id)}
               className="fav_btn"
-            ></FavoriteBorderIcon>
+            ></FavoriteIcon>
           )}
         </div>
       </div>

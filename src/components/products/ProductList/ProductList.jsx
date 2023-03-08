@@ -3,6 +3,7 @@ import { useProducts } from "../../../context/ProductsContext";
 import ProductCard from "../ProductCard/ProductCard";
 import "../ProductCard/ProductCard.css";
 import Pagination from "@mui/material/Pagination";
+import ModalProduct from "../../UI/Modal/ModalProduct";
 
 const ProductList = () => {
   const { products, getProducts, page, setPage } = useProducts();
@@ -29,7 +30,14 @@ const ProductList = () => {
     <>
       <div className="products_db">
         {products ? (
-          currentData().map((item) => <ProductCard key={item.id} card={item} />)
+          currentData().map((item, index) => (
+            <>
+              <ProductCard key={item.id} card={item} />
+              <div style={{ display: "block", marginTop: "36rem" }}>
+                <ModalProduct key={index} card={item} />
+              </div>
+            </>
+          ))
         ) : (
           <h3>Loading...</h3>
         )}
