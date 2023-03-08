@@ -52,9 +52,9 @@ const MainRoutes = () => {
         <>
           <Navbar />
           <Header />
-          <SaleProducts/>
+          <SaleProducts />
           <ProductList />
-          <LikesPage/>
+          <LikesPage />
           <Footer />
         </>
       ),
@@ -76,7 +76,6 @@ const MainRoutes = () => {
       link: "/cart",
       element: (
         <>
-          {/* <Navbar /> */}
           <CartPage />
         </>
       ),
@@ -84,7 +83,12 @@ const MainRoutes = () => {
     },
     {
       link: "/favorites",
-      element:<> <OtdelNavbar/> <FavoritesPage/></>,
+      element: (
+        <>
+          {" "}
+          <OtdelNavbar /> <FavoritesPage />
+        </>
+      ),
       id: 8,
     },
   ];

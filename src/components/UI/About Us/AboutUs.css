@@ -34,4 +34,24 @@ body {
   background-color: #000;
   margin-top: auto;
   margin: auto 160px;
+  z-index: 0;
+}
+@media only screen and (max-width: 1024px) {
+  .about {
+    margin: 0;
+    width: 95%;
+  }
+  .accordion {
+    margin: 0;
+    width: 95%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    margin-left: 40px;
+  }
+  .parent {
+    width: 155%;
+  }
 }

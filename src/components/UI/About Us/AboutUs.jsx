@@ -6,6 +6,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { Box } from "@mui/system";
+import zIndex from "@mui/material/styles/zIndex";
 
 const AboutUs = () => {
   const [expanded, setExpanded] = React.useState(false);

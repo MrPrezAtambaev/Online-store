@@ -84,3 +84,24 @@ li:hover {
 .footer-social li:last-child {
   margin-right: 0;
 }
+@media only screen and (max-width: 768px) {
+  .footer {
+    width: 150%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .right-title {
+    margin-right: 100px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .right-title {
+    margin-right: 0;
+    flex-basis: fit-content;
+    margin-left: 15px;
+  }
+  .w-100 {
+    width: 15% !important;
+  }
+}

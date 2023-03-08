@@ -7,7 +7,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer = () => {
   return (
-    <div style={{marginTop: '5rem'}} >
+    <div className="footer" style={{ marginTop: "5rem" }}>
       <div className="col-md-6 mt-md-0 mt-10">
         <h5 className="text-uppercase">Footer Content</h5>
         <p>
@@ -17,7 +17,7 @@ const Footer = () => {
       <footer className="page-footer font-small white pt-4">
         <div className="container-fluid text-center text-md-left ">
           <div className=" d-flex2 ">
-            <hr className="clearfix w-100 d-md-none pb-0" />
+            {/* <hr className="clearfix w-100 d-md-none pb-0" /> */}
 
             <div className="right-title col-md-3 mb-md-0 mb-3">
               <h5 className="text-uppercase">Legal Notice</h5>

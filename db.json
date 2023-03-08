@@ -4,75 +4,110 @@
       "img": "https://t3.ftcdn.net/jpg/00/91/07/82/360_F_91078252_i7cx2uJzDzgoJGDdUAHtVAcpjugVauX9.jpg",
       "title": "True Wirless",
       "category": "HeadPhones",
-      "color": "White",
-      "price": 2000,
-      "type": "clothes",
-      "like": 12,
-      "comments": [],
-      "id": 4
+      "color": "Black",
+      "price": 19000,
+      "type": "electronics",
+      "like": 41,
+      "id": 3
     },
     {
-      "img": "https://t3.ftcdn.net/jpg/00/91/07/82/360_F_91078252_i7cx2uJzDzgoJGDdUAHtVAcpjugVauX9.jpg",
-      "title": "True Wirless",
+      "img": "https://www.borofone.com/wp-content/uploads/2022/04/borofone-bo12-power-bt-headset-headphones.jpg",
+      "title": "Nayshniki",
       "category": "HeadPhones",
-      "color": "White",
-      "price": 2000,
-      "type": "clothes",
-      "like": 12,
-      "comments": [],
+      "color": "Red",
+      "price": 21111,
+      "type": "electronics",
+      "like": 34,
       "id": 5
     },
     {
-      "img": "https://t3.ftcdn.net/jpg/00/91/07/82/360_F_91078252_i7cx2uJzDzgoJGDdUAHtVAcpjugVauX9.jpg",
-      "title": "True Wirless",
-      "category": "HeadPhones",
-      "color": "White",
-      "price": 2000,
-      "type": "clothes",
-      "like": 13,
-      "comments": [
-        {
-          "item": "ss",
-          "id": 1678215540372
-        },
-        {
-          "item": "ssdd",
-          "id": 1678215540372
-        },
-        {
-          "item": "ssddedf",
-          "id": 1678215540372
-        },
-        {
-          "item": "ssddedffd",
-          "id": 1678215540372
-        },
-        {
-          "item": "cf",
-          "id": 1678252073724
-        }
-      ],
+      "img": "https://www.borofone.com/wp-content/uploads/2022/04/borofone-bo12-power-bt-headset-headphones.jpg",
+      "title": "Title",
+      "category": "Type",
+      "color": "Black",
+      "price": 12313,
+      "type": "Headphones",
+      "like": 56,
       "id": 6
     },
     {
-      "img": "https://t3.ftcdn.net/jpg/00/91/07/82/360_F_91078252_i7cx2uJzDzgoJGDdUAHtVAcpjugVauX9.jpg",
-      "title": "True Wirless",
+      "img": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4oced?ver=6406",
+      "title": "SurFase HeadPhones 2",
+      "category": "HeadPhones",
+      "color": "Black",
+      "price": 12000,
+      "type": "electronics",
+      "like": 76,
+      "id": 7
+    },
+    {
+      "img": "https://m.media-amazon.com/images/I/61q+RT4CybS._AC_SX679_.jpg",
+      "title": "TUINYO Bluetooth Headphones Wireless",
+      "category": "HeadPhones",
+      "color": "Pink",
+      "price": 30000,
+      "type": "electronics",
+      "like": 78,
+      "id": 8
+    },
+    {
+      "img": "https://d287ku8w5owj51.cloudfront.net/images/products/hero/creative-zen-hybrid/pdt_23891.png",
+      "title": "CREATIVE ZEN HYBRID",
       "category": "HeadPhones",
       "color": "White",
-      "price": 2000,
-      "type": "clothes",
-      "like": 13,
-      "comments": [
-        {
-          "item": "fed",
-          "id": 1678252171956
-        },
-        {
-          "item": "tgrfd",
-          "id": 1678252171956
-        }
-      ],
-      "id": 7
+      "price": 5000,
+      "type": "electronics",
+      "like": 90,
+      "id": 9
+    },
+    {
+      "img": "https://cdn.shopify.com/s/files/1/2685/4510/files/abyss_diana_v2_cf1.jpg?v=1634913529&width=2400",
+      "title": "ABYSS HeadPhones",
+      "category": "HeadPhones",
+      "color": "White",
+      "price": 12000,
+      "type": "electronics",
+      "like": 87,
+      "id": 10
+    },
+    {
+      "img": "https://images.ctfassets.net/8cd2csgvqd3m/6EW69PKv5qTKXff6ccBeE7/f689bb337cd025ca8c4936db9d7581a1/Beoplay-H95-Lunar-Red-Hero.png?q=90&fm=webp&w=720&h=720&fit=fill",
+      "title": "Over-ear HeadPhones",
+      "category": "HeadPhones",
+      "color": "Red",
+      "price": 20000,
+      "type": "electronics",
+      "like": 12,
+      "id": 11
+    },
+    {
+      "img": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/og-airpods-max-202011?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1603996970000",
+      "title": "AirPods Max",
+      "category": "HeadPhones",
+      "color": "White",
+      "price": 10000,
+      "type": "HeadPhones",
+      "like": 100,
+      "id": 12
+    },
+    {
+      "img": "https://www.majority.co.uk/wp-content/uploads/2022/10/Tru-studio-2.png",
+      "title": "Archives",
+      "category": "Wired",
+      "color": "Black",
+      "price": 15000,
+      "type": "electronics",
+      "like": 340,
+      "id": 13
+    },
+    {
+      "img": "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ae22e3a6-9590-401a-94f6-d8ecf42b4932_600x.png?v=1673002621",
+      "title": "boAT Rockerz 450",
+      "category": "HeadPhones",
+      "color": "White",
+      "price": 34000,
+      "type": "electronics",
+      "id": 14
     }
   ]
 }
