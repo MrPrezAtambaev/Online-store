@@ -42,20 +42,20 @@ const ModalProduct = ({ card }) => {
   };
 
   function commentProduct() {
-    card.comments.push(comment);
-    likeProduct(card);
-    console.log(card.comments);
+    card.comments.push(comment)
+    likeProduct(card)
+    console.log(card.comments)
   }
 
   return (
     <>
-      <div style={{ position: "relative" }}>
+      <div style={{ position: "relative"}}>
         <Button
           sx={{
-            color: "white",
             position: "absolute",
             bottom: "-40px",
-            left: "-340px",
+            left: "-320px",
+            color: 'gray' 
           }}
           onClick={handleOpen}
         >
@@ -66,14 +66,13 @@ const ModalProduct = ({ card }) => {
             <h1
               key={card.id}
               style={{
-                fontSize: "17px",
-                paddingTop: "7px",
-                marginTop: "7px",
-                padding: "",
-                color: "white",
+                fontSize: "15px",
+                marginLeft: '27px',
+                marginTop: '15px',
                 position: "absolute",
                 bottom: "-40px",
                 left: "-275px",
+                color: 'gray' 
               }}
             >
               {card.comments.length}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -12,23 +12,18 @@ import { useProducts } from "../../context/ProductsContext";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useFavAndLike } from "../../context/FavAndLikeContextProvider";
 import { useCart } from "../../context/CartContextProvider";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 const FavoritesPage = () => {
   const navigate = useNavigate();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const {deleteProduct,likeProduct, getOneProduct, oneProduct} = useProducts();
-  const {favorite, favProduct, delFavorite} = useFavAndLike()
   const {addProductToCart} = useCart()
+  const [favorite, setFavorite] = useState()
   
   const fav = JSON.parse(localStorage.getItem("favorites"));
   
-  useEffect(() => {
-    {fav?.map((card) => (
-        getOneProduct(card.id)
-    ))}
-  }, [])
-
   const handleChange = (event) => {
     setAuth(event.target.checked);
   };
@@ -41,10 +36,22 @@ const FavoritesPage = () => {
     setAnchorEl(null);
   };
 
+  const favProduct = (card) => {
+    const products = JSON.parse(localStorage.getItem("favorites"));
+    products.push(card);
+    localStorage.setItem("favorites", JSON.stringify(products));
+    setFavorite(true);
+  };
 
+  function delFavorite(id) {
+      let products = JSON.parse(localStorage.getItem('favorites'))
+      products = products.map((elem) => elem.id !== id)
+      localStorage.setItem('favorites', JSON.stringify(products))
+      setFavorite(false)
+  }
 
   return (
-    <>
+    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}} >
       {fav?.map((card) => (
         <div
           key={card.id}
@@ -52,13 +59,13 @@ const FavoritesPage = () => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            height: "850px",
             width: "40%",
             flexWrap: "wrap",
           }}
           className="product_card">
             <Box sx={{ flexGrow: 1, marginRight: "4rem", paddingTop: "2rem" }}>
               <AppBar sx={{ backgroundColor: "black" }} position="static">
+                  {localStorage.getItem("admin") === "true" && (
                 <Toolbar>
                   <IconButton
                     size="large"
@@ -82,7 +89,7 @@ const FavoritesPage = () => {
                         onClick={handleMenu}
                         color="inherit"
                       >
-                        <AccountCircle />
+                        <MoreVertIcon />
                       </IconButton>
                       <Menu
                         id="menu-appbar"
@@ -112,6 +119,7 @@ const FavoritesPage = () => {
                     </div>
                   )}
                 </Toolbar>
+              )}
               </AppBar>
             </Box>
             <div className="product_card_sort">
@@ -134,7 +142,7 @@ const FavoritesPage = () => {
               {favorite ? (
                 <FavoriteBorderIcon
                   style={{ background: "gray" }}
-                  onClick={() => favProduct(oneProduct)}
+                  onClick={() => favProduct(card)}
                   className="fav_btn"
                 ></FavoriteBorderIcon>
               ) : (
@@ -147,7 +155,7 @@ const FavoritesPage = () => {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 };
 

@@ -131,6 +131,58 @@ const ProductsContextProvider = ({ children }) => {
       setUsername(newUsername);
       setNewUsername("");
     }
+
+    async function getOneProduct(id) {
+        const {data} = await axios(`${API}/${id}`)
+        // dispatch({
+        //     type: 'GET_ONE_PRODUCTS',
+        //     payload: null
+        // })
+        dispatch({
+            type: 'GET_ONE_PRODUCTS',
+            payload: data
+        })
+    }
+
+    async function editedProduct(newProduct) {
+        await axios.patch(`${API}/${newProduct.id}`, newProduct)
+        getProducts()
+    }
+
+    async function deleteProduct(id) {
+        await axios.delete(`${API}/${id}`)
+        getProducts()
+    }
+
+    async function deleteComment(id, comID) {
+        await axios.delete(`${API}/${id}/comments/${comID}`)
+        getOneProduct(id)
+    }
+
+    const fetchByParams = (query, value) => {
+        const search = new URLSearchParams (location.search);
+        if(value == 'all') {
+            search.delete(query);
+        } else {
+            search.set(query, value)
+        };
+
+        const url = `${location.pathname}?${search.toString()}`
+
+        navigate(url)
+    }
+
+    async function likeProduct(newProduct) {
+        await axios.patch(`${API}/${newProduct.id}`, newProduct)
+        getProducts()
+    }
+  
+
+    function setLikeStorage() {
+        localStorage.setItem('likes', JSON.stringify(INIT_STATE.likes))
+        localStorage.setItem('favorites', JSON.stringify(INIT_STATE.favorites))
+    }
+
     if (avatarFile) {
       const avatarUrl = URL.createObjectURL(avatarFile);
       localStorage.setItem("avatarUrl", avatarUrl);
@@ -155,7 +207,6 @@ const ProductsContextProvider = ({ children }) => {
     oneProduct: state.oneProduct,
     deleteProduct,
     fetchByParams,
-
     setPage,
     page,
     setLikeStorage,

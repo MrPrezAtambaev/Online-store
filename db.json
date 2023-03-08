@@ -7,11 +7,11 @@
       "color": "Black",
       "price": 19000,
       "type": "Wireless earbuds",
-      "like": 41,
+      "like": 60,
       "comments": [],
       "id": 1,
       "features": "Signature Sennheiser sound, Adaptive noise cancellation, High-quality voice capture, Splash-resistant IPX4, Perfect fit, Up to 28 hours of playback, Wireless charging",
-      "love": "love"
+      "love": "Active Noise Cancellation"
     },
     {
       "img": "https://istore.kg/media/products/sony-black-1.webp",
@@ -25,15 +25,24 @@
         {
           "item": "ss",
           "id": 12345
+        },
+        {
+          "item": "ss",
+          "id": 1678297990631
+        },
+        {
+          "item": "ssfds",
+          "id": 1678297990631
         }
       ],
       "features": "Технология Dual Noise Sensor улавливает окружающий шум с помощью четырех микрофонов на чашах наушников и передает данные в HD-процессор QN1, который выполняет шумоподавление в режиме реального времени с учетом акустических характеристик окружающей среды. С новой однокристальной аудиосистемой и поддержкой Bluetooth® он с частотой 700 раз в секунду оценивает параметры музыки и шума, акустические характеристики пространства между динамиками и ушными раковинами и соответственно корректирует звуковой сигнал.",
-      "id": 2
+      "id": 2,
+      "love": "Wireless Charging"
     },
     {
       "img": "https://t3.ftcdn.net/jpg/00/91/07/82/360_F_91078252_i7cx2uJzDzgoJGDdUAHtVAcpjugVauX9.jpg",
       "title": "True Wirless",
-      "category": "HeadPhones",
+      "category": "wired",
       "color": "Black",
       "price": 19000,
       "type": "electronics",
@@ -62,10 +71,15 @@
         {
           "item": "Hi",
           "id": 1678266815000
+        },
+        {
+          "item": "dsds",
+          "id": 1678291257700
         }
       ],
       "features": "Signature Sennheiser sound, Adaptive noise cancellation, High-quality voice capture, Splash-resistant IPX4, Perfect fit, Up to 28 hours of playback, Wireless charging",
-      "id": 3
+      "id": 3,
+      "love": "Adaptable Acoustics"
     },
     {
       "img": "https://www.borofone.com/wp-content/uploads/2022/04/borofone-bo12-power-bt-headset-headphones.jpg",
@@ -74,7 +88,7 @@
       "color": "Red",
       "price": 21111,
       "type": "electronics",
-      "like": 34,
+      "like": 38,
       "comments": [
         {
           "item": "ss",
@@ -90,7 +104,8 @@
         }
       ],
       "features": "Signature Sennheiser sound, Adaptive noise cancellation, High-quality voice capture, Splash-resistant IPX4, Perfect fit, Up to 28 hours of playback, Wireless charging",
-      "id": 5
+      "id": 5,
+      "love": "Wireless Charging"
     },
     {
       "img": "https://www.borofone.com/wp-content/uploads/2022/04/borofone-bo12-power-bt-headset-headphones.jpg",
@@ -115,7 +130,8 @@
         }
       ],
       "features": "Signature Sennheiser sound, Adaptive noise cancellation, High-quality voice capture, Splash-resistant IPX4, Perfect fit, Up to 28 hours of playback, Wireless charging",
-      "id": 6
+      "id": 6,
+      "love": "Adaptable Acoustics"
     },
     {
       "img": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE4oced?ver=6406",
@@ -148,7 +164,8 @@
         }
       ],
       "features": "\n Length 8.03 (204 mm)\n Width 7.68 (195 mm)\n Depth 1.89 (48 mm)\n Weight\n 0.64 lbs (0.29 kg)\n Exterior\n Colors: Light Gray Matte Black3\n Frequency response\n 20 – 20kHz\n Noise cancellation\n Up to 30 dB for active noise cancellation\n Up to 40 dB for passive noise cancellation\n Speaker\n 40 mm Free Edge driver\n Sound pressure level output\n Up to 115 dB (1kHz, 1Vrms via cable connector with power on)\n Up to 115 dB (1kHz, 0dBFS over Bluetooth® connection)\n Charging\n Full charge in less than 2 hours\n Battery Life\n Up to 18.5 hours of music listening time1 or up to 15 hours of voice calling on Microsoft Teams2\n USB cord length\n 59.00 in (1.5 m)\n Audio cable length\n 78.74 in (1.2 m)\n Inputs\n USB-C™ connector\n 3.5 mm audio connector\n Sensors\n N/A\n Compatibility\n Windows 11 Home/Pro, Windows 10, Android 9 or 10, IOS 12 or 13, Bluetooth 4.1/4.2/5.0**\n Audio Codec\n SBC and aptX™\n Buttons/controls\n Power button, Mute button, Volume dial (right ear), Noise Cancellation dial (left ear)\n What’s in the box\n Surface Headphones 2\n Carrying case\n USB cable\n Audio cable\n Quick start guide\n Safety and warranty documents\n Warranty\n 1-year limited hardware warranty",
-      "id": 7
+      "id": 7,
+      "love": "Adaptable Acoustics"
     },
     {
       "img": "https://m.media-amazon.com/images/I/61q+RT4CybS._AC_SX679_.jpg",
@@ -160,7 +177,8 @@
       "like": 78,
       "comments": [],
       "features": "Amazing Sound Quality : Providing customers with outstanding sound quality and satisfaction is our paramount goal. High definition stereo headphones together with advanced software and noise reduction technology are designed to reduce ambient noises. It is ideal for phone calls, music, and entertainment. Lose yourself in immersive music even in the lowest volume levels!",
-      "id": 8
+      "id": 8,
+      "love": "Adaptable Acoustics"
     },
     {
       "img": "https://d287ku8w5owj51.cloudfront.net/images/products/hero/creative-zen-hybrid/pdt_23891.png",
@@ -177,7 +195,8 @@
         }
       ],
       "features": "Find your gateway to serenity and personal privacy with the Creative Zen Hybrid!\n\nFeaturing Hybrid Active Noise Cancellation for a more peaceful time and Ambient Mode when you need to be aware of your surroundings, get your much needed reprieve as and when you need them.\n\nThis pair of over-ear headphones is the perfect combination of versatility and performance—wireless or wired, outdoors or indoors—and is fitted with a noise-cancelling microphone that can handle any impromptu calls. To top it off, its long-lasting battery life of up to 27 hours even with ANC enabled also means you can power through an entire day without distractions.",
-      "id": 9
+      "id": 9,
+      "love": "Wireless Charging"
     },
     {
       "img": "https://cdn.shopify.com/s/files/1/2685/4510/files/abyss_diana_v2_cf1.jpg?v=1634913529&width=2400",
@@ -194,7 +213,8 @@
         }
       ],
       "features": "Be one of the few in the world to own a unique ABYSS headphone! Each color combination is an original, crafted by our in-house finishing experts, most are one-of-a-kind. These Limited Editions are only available from this store. To see the latest additions, follow us on our social media @abyssheadphones, or check back here from time to time\nDiana TC is the latest version in the evolution of the world's thinnest planar headphone by ABYSS",
-      "id": 10
+      "id": 10,
+      "love": "Wireless Charging"
     },
     {
       "img": "https://images.ctfassets.net/8cd2csgvqd3m/6EW69PKv5qTKXff6ccBeE7/f689bb337cd025ca8c4936db9d7581a1/Beoplay-H95-Lunar-Red-Hero.png?q=90&fm=webp&w=720&h=720&fit=fill",
@@ -203,10 +223,11 @@
       "color": "Red",
       "price": 20000,
       "type": "electronics",
-      "like": 12,
+      "like": 13,
       "comments": [],
       "features": "Incredible Sound Loved by 20 Million+ People\nHi-Res Audio: Custom oversized 40 mm dynamic drivers produce Hi-Res sound. Life Q20 active noise canceling headphones reproduce music with extended high frequencies that reach up to 40 kHz for extraordinary clarity and detail.\nReduce Ambient Noises By Up to 90%: Our team of engineers conducted more than 100,000 tests in real-life scenarios to fine-tune Life Q20s 4 built-in ANC microphones and digital active noise cancellation algorithm. As a result, the hybrid active noise cancellation can detect and cancel out a wider range of low and mid-frequency noises such as cars and airplane engines",
-      "id": 11
+      "id": 11,
+      "love": "Wireless Charging"
     },
     {
       "img": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/og-airpods-max-202011?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1603996970000",
@@ -214,11 +235,12 @@
       "category": "Headphones",
       "color": "White",
       "price": 10000,
-      "like": 101,
-      "comments": [],
       "type": "Over-ear headphones",
+      "like": 102,
+      "comments": [],
       "features": "Signature Sennheiser sound, Adaptive noise cancellation, High-quality voice capture, Splash-resistant IPX4, Perfect fit, Up to 28 hours of playback, Wireless charging",
-      "id": 12
+      "id": 12,
+      "love": "Active Noise Cancellation"
     },
     {
       "img": "https://www.majority.co.uk/wp-content/uploads/2022/10/Tru-studio-2.png",
@@ -247,7 +269,8 @@
         }
       ],
       "features": "Over-ear, open-back, Transducer type Planar Magnetic, Magnetic structure Fluxor™ magnet array, Phase management Fazor™, Magnet type Neodymium N50, Diaphragm type Ultra-Thin Uniforce™, Transducer size 90 mm, Maximum SPL >130dB, Frequency response 5Hz – 50kHz, THD <0.1% @ 100 dB SPL, 1kHz, Sensitivity 100 dB/1mW (at Drum Reference Point), Impedance 18 ohms, Max power handling 5W RMS, Min recommended power >100mW, Recommended power level >250mW, Weight 495g (20% reduction over the LCD-X)",
-      "id": 13
+      "id": 13,
+      "love": "Adaptable Acoustics"
     },
     {
       "img": "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ae22e3a6-9590-401a-94f6-d8ecf42b4932_600x.png?v=1673002621",
@@ -255,11 +278,12 @@
       "category": "HeadPhones",
       "color": "White",
       "price": 34000,
-      "type": "electronics",
+      "type": "wired",
       "like": 340,
       "comments": [],
       "features": "Set your mind ablaze with boAt Rockerz 450 — our slick headphones that offer immersive sound quality and add luxury to your sound. Propelled by crystal clear 40mm dynamic drivers, slip into an alternate HD immersive audio reality. The soft cornered matte black finish allows for a comfortable fit, propagated by plush foam in adaptive and adjustable design. Choose your mode, go wireless with Bluetooth V4.2 or connect an aux wire that doesn’t cause any drain on the 300mAh rechargeable lithium battery.",
-      "id": 14
+      "id": 14,
+      "love": "Active Noise Cancellation"
     },
     {
       "img": "https://target.scene7.com/is/image/Target/GUEST_d481ae28-76cf-45fc-a28b-0dca314d449c?wid=488&hei=488&fmt=pjpeg",
@@ -271,7 +295,8 @@
       "like": 340,
       "comments": [],
       "features": "Custom high-excursion Apple driver. Custom high dynamic range amplifier. Active Noise Cancellation. Adaptive Transparency. Vent system for pressure equalization. Personalized Spatial Audio with dynamic head tracking 1. Adaptive EQ.",
-      "id": 15
+      "id": 15,
+      "love": "Active Noise Cancellation"
     },
     {
       "img": "https://media.istockphoto.com/id/835148968/photo/red-headphones-isolated.jpg?s=170667a&w=0&k=20&c=n81TvgWs0iMs5LEqSI_ULpChfsQApeAW_Gq428Rl8Ls=",
@@ -288,7 +313,8 @@
         }
       ],
       "features": "Наушники Beats Solo3 могут работать до 40 часов без подзарядки, чтобы вы могли пользоваться ими каждый день. 5‑минутной зарядки Fast Fuel хватит ещё на 3 часа воспроизведения. Фирменное звучание Beats в наушниках с технологией Bluetooth класса 1 будет сопровождать вас повсюду — куда бы вы ни отправились. Расположение чашек с мягкими амбушюрами можно регулировать — вы сможете носить их целый день.",
-      "id": 16
+      "id": 16,
+      "love": "Active Noise Cancellation"
     }
   ]
 }
