@@ -8,7 +8,7 @@
   border-radius: 10px;
   height: 60px;
   position: fixed;
-  top: -673px;
+  top: -680px;
   z-index: 3;
   left: 30px;
 }
@@ -22,7 +22,7 @@
   border-radius: 10px;
   height: 60px;
   position: absolute;
-  top: -460px;
+  top: -570px;
   z-index: 3;
   left: 30px;
 }
@@ -185,16 +185,19 @@
   }
 
   .abs-img {
-    width: 150%;
+    width: 157%;
+  }
+  .abs-text {
+    left: 15rem;
   }
 
   .navbar {
-    width: 270%;
+    width: 290%;
     display: flex;
     justify-content: flex-end !important;
   }
   .navbar__burger {
-    right: 1000px;
+    right: 1080px;
     top: 13px;
   }
 }

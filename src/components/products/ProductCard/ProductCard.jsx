@@ -162,7 +162,7 @@ const ProductCard = ({ card }) => {
             </button>
           ) : (
             <button
-              style={{ background: "red" }}
+              style={{ background: "red", color: "white" }}
               onClick={addLike}
               className="prd_content_btn_2"
             >

@@ -48,6 +48,7 @@
   border-radius: 7px;
   background-color: #0096d6;
   margin-top: 1.5rem;
+  color: white;
 }
 .prd_content_btn_2 {
   width: 140px;
@@ -124,6 +125,12 @@
     width: 85%;
   }
   .css-yuzg60-MuiButtonBase-root-MuiPaginationItem-root {
+    width: 150%;
+  }
+  .product_all {
+    width: 145%;
+  }
+  .pagin {
     width: 150%;
   }
 }

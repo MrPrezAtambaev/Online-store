@@ -166,6 +166,13 @@ export default function CartPage() {
 
                   <form className="mb-5">
                     <div className="form-outline mb-5">
+                      <label
+                        className="form-label"
+                        htmlFor="typeText"
+                        style={{ color: "black" }}
+                      >
+                        Card Number
+                      </label>
                       <input
                         type="text"
                         id="typeText"
@@ -175,23 +182,9 @@ export default function CartPage() {
                         minlength="19"
                         maxlength="19"
                       />
-                      <label
-                        className="form-label"
-                        htmlFor="typeText"
-                        style={{ color: "black" }}
-                      >
-                        Card Number
-                      </label>
                     </div>
 
                     <div className="form-outline mb-5">
-                      <input
-                        type="text"
-                        id="typeName"
-                        className="form-control form-control-lg"
-                        siez="17"
-                        value="John Smith"
-                      />
                       <label
                         className="form-label"
                         htmlFor="typeName"
@@ -199,11 +192,25 @@ export default function CartPage() {
                       >
                         Name on card
                       </label>
+                      <input
+                        type="text"
+                        id="typeName"
+                        className="form-control form-control-lg"
+                        siez="17"
+                        value="John Smith"
+                      />
                     </div>
 
                     <div className="row">
                       <div className="col-md-6 mb-5">
                         <div className="form-outline">
+                          <label
+                            className="form-label"
+                            htmlFor="typeExp"
+                            style={{ color: "black" }}
+                          >
+                            Expiration
+                          </label>
                           <input
                             type="text"
                             id="typeExp"
@@ -213,17 +220,17 @@ export default function CartPage() {
                             minlength="7"
                             maxlength="7"
                           />
-                          <label
-                            className="form-label"
-                            htmlFor="typeExp"
-                            style={{ color: "black" }}
-                          >
-                            Expiration
-                          </label>
                         </div>
                       </div>
                       <div className="col-md-6 mb-5">
                         <div className="form-outline">
+                          <label
+                            className="form-label"
+                            htmlFor="typeText"
+                            style={{ color: "black" }}
+                          >
+                            Cvv
+                          </label>
                           <input
                             type="password"
                             id="typeText"
@@ -233,13 +240,6 @@ export default function CartPage() {
                             minlength="3"
                             maxlength="3"
                           />
-                          <label
-                            className="form-label"
-                            htmlFor="typeText"
-                            style={{ color: "black" }}
-                          >
-                            Cvv
-                          </label>
                         </div>
                       </div>
                     </div>
