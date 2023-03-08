@@ -20,6 +20,7 @@ import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 import OtdelNavbar from "./components/UI/OtdelNavbar/OtdelNavbar";
 import FavAndLikeContextProvider from "./context/FavAndLikeContextProvider";
 import LikeContextProvider from "./context/LikeContextProvider";
+import Profile from "./components/UI/Profile/Profile";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -92,6 +93,16 @@ const MainRoutes = () => {
         </>
       ),
       id: 8,
+    },
+    {
+      link: "/profile",
+      element: (
+        <>
+          {" "}
+          <Profile />
+        </>
+      ),
+      id: 9,
     },
   ];
 

@@ -6,7 +6,6 @@ export const authContext = React.createContext();
 
 export const useAuth = () => useContext(authContext);
 
-
 const API = "http://35.239.251.89/";
 
 const AuthContextProvider = ({ children }) => {
@@ -56,6 +55,7 @@ const AuthContextProvider = ({ children }) => {
     localStorage.removeItem("token");
     localStorage.removeItem("username");
     localStorage.removeItem("likes");
+    localStorage.removeItem("admin");
     setUser("");
     navigate("/");
   };
