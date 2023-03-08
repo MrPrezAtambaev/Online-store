@@ -25,35 +25,25 @@ const ProductList = () => {
     const end = begin + itemsOnPage;
     return products.slice(begin, end);
   }
+console.log(currentData()[0]?.id);
 
   return (
     <>
     <div className="products_db">
     {products ? (
         currentData().map((item, index) => (
-          <>
-            <ProductCard key={item.id} card={item} />
+          <div key={item.id}>
+            <ProductCard  card={item} />
             <div style={{display: 'block', marginTop: '36rem'}} >
               <ModalProduct key={index} card={item}  />
             </div>
-          </>
+          </div>
         ))
       ) : (
         <h3>Loading...</h3>
       )}
     </div>
     
-    <div style={{display: 'flex', justifyContent: 'center', paddingTop: '3rem'}} >
-      <Pagination style={{background: 'white'}} count={count} page={page} onChange={handlePage} />
-    </div>
-      <div className="products_db">
-        {products ? (
-          currentData().map((item) => <ProductCard key={item.id} card={item} />)
-        ) : (
-          <h3>Loading...</h3>
-        )}
-      </div>
-
       <div
         style={{
           display: "flex",

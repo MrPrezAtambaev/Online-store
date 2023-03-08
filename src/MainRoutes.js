@@ -18,6 +18,8 @@ import SaleProducts from "./components/products/SaleProducts/SaleProducts";
 import LikesPage from "./pages/LikesPage/LikesPage";
 import FavoritesPage from "./pages/FavoritesPage/FavoritesPage";
 import OtdelNavbar from "./components/UI/OtdelNavbar/OtdelNavbar";
+import FavAndLikeContextProvider from "./context/FavAndLikeContextProvider";
+import LikeContextProvider from "./context/LikeContextProvider";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -64,7 +66,7 @@ const MainRoutes = () => {
       link: "/about",
       element: (
         <>
-          <Navbar />
+          <OtdelNavbar/>
           <AboutUs />
           <OrderForm />
           <Footer />
@@ -94,15 +96,19 @@ const MainRoutes = () => {
   ];
 
   return (
-    <CartContextProvider>
-      <ProductsContextProvider>
-        <Routes>
-          {PUBLIC_ROUTES.map((item) => (
-            <Route path={item.link} element={item.element} key={item.id} />
-          ))}
-        </Routes>
-      </ProductsContextProvider>
-    </CartContextProvider>
+    <LikeContextProvider>
+      <FavAndLikeContextProvider>
+        <CartContextProvider>
+          <ProductsContextProvider>
+            <Routes>
+              {PUBLIC_ROUTES.map((item) => (
+                <Route path={item.link} element={item.element} key={item.id} />
+              ))}
+            </Routes>
+          </ProductsContextProvider>
+        </CartContextProvider>
+      </FavAndLikeContextProvider>
+    </LikeContextProvider>
   );
 };
 

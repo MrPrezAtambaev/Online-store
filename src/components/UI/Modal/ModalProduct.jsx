@@ -22,9 +22,9 @@ const ModalProduct = ({card}) => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  useEffect(() => {
-    getOneProduct(card.id)
-  }, [])
+  // useEffect(() => {
+  //   getOneProduct(card.id)
+  // }, [])
   
   const handleInp = (e) => {
       let obj = {
@@ -35,9 +35,9 @@ const ModalProduct = ({card}) => {
   };
 
   function commentProduct() {
-    oneProduct.comments.push(comment)
-    likeProduct(oneProduct)
-    console.log(oneProduct.comments)
+    card.comments.push(comment)
+    likeProduct(card)
+    console.log(card.comments)
   }
 
   return (
@@ -46,13 +46,9 @@ const ModalProduct = ({card}) => {
          <Button  sx={{color: 'gray'}} onClick={handleOpen} >
             Review
          </Button>
-            {oneProduct? (
                   <>
-                    <h1 style={{fontSize: '17px', paddingTop: '7px', padding: ''}} >{oneProduct.comments.length}</h1>
+                    <h1 style={{fontSize: '17px', paddingTop: '7px', padding: ''}} >{card.comments.length}</h1>
                   </>
-                ) : (
-                  <h1>Error</h1>
-              )}
         </div>
             <Modal
             open={open}
@@ -68,14 +64,14 @@ const ModalProduct = ({card}) => {
                   </button>
                 </Typography>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    {oneProduct? (
+                    {card? (
                       <>
-                        {oneProduct.comments.map(elem => (
-                          <>
+                        {card.comments.map(elem => (
+                          <div key={elem.id}>
                             <h1>{user}</h1>
                             <h1 style={{color: 'black'}}>{elem.item}</h1>
-                            <button onClick={() => deleteComment(elem.id)} >Delete</button>
-                          </>
+                            <button onClick={() => deleteComment(card.id, elem.id)}>Delete</button>
+                          </div>
 
                         ))}
                       </>

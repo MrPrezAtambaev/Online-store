@@ -8,6 +8,12 @@
       "price": 19000,
       "type": "electronics",
       "like": 41,
+      "comments": [
+        {
+          "item": "ss",
+          "id": 12345
+        }
+      ],
       "id": 3
     },
     {
@@ -18,6 +24,20 @@
       "price": 21111,
       "type": "electronics",
       "like": 34,
+      "comments": [
+        {
+          "item": "ss",
+          "id": 1678277426192
+        },
+        {
+          "item": "ssss",
+          "id": 1678277426192
+        },
+        {
+          "item": "ssssdd",
+          "id": 1678277426192
+        }
+      ],
       "id": 5
     },
     {
@@ -27,7 +47,21 @@
       "color": "Black",
       "price": 12313,
       "type": "Headphones",
-      "like": 56,
+      "like": 147,
+      "comments": [
+        {
+          "item": "sss",
+          "id": 1678254332638
+        },
+        {
+          "item": "dd",
+          "id": 1678255996953
+        },
+        {
+          "item": "ss",
+          "id": 1678258948815
+        }
+      ],
       "id": 6
     },
     {
@@ -38,6 +72,7 @@
       "price": 12000,
       "type": "electronics",
       "like": 76,
+      "comments": [],
       "id": 7
     },
     {
@@ -48,6 +83,7 @@
       "price": 30000,
       "type": "electronics",
       "like": 78,
+      "comments": [],
       "id": 8
     },
     {
@@ -58,6 +94,7 @@
       "price": 5000,
       "type": "electronics",
       "like": 90,
+      "comments": [],
       "id": 9
     },
     {
@@ -68,6 +105,7 @@
       "price": 12000,
       "type": "electronics",
       "like": 87,
+      "comments": [],
       "id": 10
     },
     {
@@ -78,6 +116,7 @@
       "price": 20000,
       "type": "electronics",
       "like": 12,
+      "comments": [],
       "id": 11
     },
     {
@@ -87,7 +126,8 @@
       "color": "White",
       "price": 10000,
       "type": "HeadPhones",
-      "like": 100,
+      "like": 101,
+      "comments": [],
       "id": 12
     },
     {
@@ -98,16 +138,25 @@
       "price": 15000,
       "type": "electronics",
       "like": 340,
+      "comments": [
+        {
+          "item": "ввв",
+          "id": 1678262010819
+        },
+        {
+          "item": "вввотл",
+          "id": 1678262010819
+        },
+        {
+          "item": "fdc",
+          "id": 1678268281219
+        },
+        {
+          "item": "wdfg",
+          "id": 1678268470607
+        }
+      ],
       "id": 13
-    },
-    {
-      "img": "https://cdn.shopify.com/s/files/1/0057/8938/4802/products/ae22e3a6-9590-401a-94f6-d8ecf42b4932_600x.png?v=1673002621",
-      "title": "boAT Rockerz 450",
-      "category": "HeadPhones",
-      "color": "White",
-      "price": 34000,
-      "type": "electronics",
-      "id": 14
     }
   ]
 }

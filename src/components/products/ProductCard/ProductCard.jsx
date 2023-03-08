@@ -3,17 +3,12 @@ import "./ProductCard.css";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../../context/ProductsContext";
 import { useCart } from "../../../context/CartContextProvider";
-import ModalProduct from "../../UI/Modal/ModalProduct";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import Switch from "@mui/material/Switch";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -26,16 +21,17 @@ const ProductCard = ({ card }) => {
     setLikeStorage,
     oneProduct,
   } = useProducts();
-  const [likes, setLike] = useState(false);
-  const [favorite, setFavorite] = useState(false);
+
   const { addProductToCart, checkProductInCart } = useCart();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+  const navigate = useNavigate();
+  const [favorite, setFavorite] = useState(false);
+  const [likes, setLike] = useState(false)
   const handleChange = (event) => {
     setAuth(event.target.checked);
   };
-
+  
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -45,62 +41,62 @@ const ProductCard = ({ card }) => {
   };
   useEffect(() => {
     // if(localStorage.getItem('username')) {
-    setLikeStorage();
-    getOneProduct(card.id);
+      setLikeStorage();
+      // getOneProduct(card.id);
+      // console.log(oneProduct, 'useeefect');
     // }
   }, []);
 
-  useEffect(() => {
-    setLike(!true);
-  }, [oneProduct]);
-
-  function addLike() {
-    oneProduct.like += 1;
-    likeProduct(oneProduct);
+  function addLike(id) {
     let STlikes = JSON.parse(localStorage.getItem("likes"));
-    STlikes.push(oneProduct);
+    card.like += 1;
+    likeProduct(card);
+    STlikes.push(card)
     localStorage.setItem("likes", JSON.stringify(STlikes));
     setLike(true);
   }
 
-  // function delLike (id) {
-  //   let STlikes = JSON.parse(localStorage.getItem('likes'))
-  //   STlikes = STlikes.map((elem) => elem.id !== id)
-  //   localStorage.setItem('likes', JSON.stringify(STlikes))
-  // }
+  function disLike(id) {
+      card.like -= 1
+      likeProduct(card)
+      let STlikes = JSON.parse(localStorage.getItem('likes'))
+      STlikes = STlikes.map((elem) => elem.id !== id)
+      localStorage.setItem('likes', JSON.stringify(STlikes))
+      setLike(false)
+  }
+  // const [one , setOne] = useState('');
+  // useEffect(()=>{
+  //   getOneProduct(card.id);
+
+  // },[])  
+  // console.log(getOneProduct(3) , 'yoyoy');
+  const [id , setId] = useState(null);
+
+useEffect(()=>{
+  getOneProduct(id);
+},[id])
+
+useEffect(()=>{
+  getOneProduct(id);
+},[])
+
+
+
 
   const favProduct = () => {
-    const products = JSON.parse(localStorage.getItem("favorites"));
-    products.push(oneProduct);
-    localStorage.setItem("favorites", JSON.stringify(products));
-    setFavorite(true);
-  };
-
+      const products = JSON.parse(localStorage.getItem("favorites"));
+      products.push(card);
+      localStorage.setItem("favorites", JSON.stringify(products));
+      setFavorite(true);
+    };
+  
   function delFavorite(id) {
-    let products = JSON.parse(localStorage.getItem('favorites'))
-    products = products.map((elem) => elem.id !== id)
-    localStorage.setItem('favorites', JSON.stringify(products))
-    setFavorite(false)
+      let products = JSON.parse(localStorage.getItem('favorites'))
+      products = products.map((elem) => elem.id !== id)
+      localStorage.setItem('favorites', JSON.stringify(products))
+      setFavorite(false)
+      
   }
-
-  function disLike (id) {
-    oneProduct.like -= 1
-    likeProduct(oneProduct)
-
-    let STlikes = JSON.parse(localStorage.getItem('likes'))
-    STlikes = STlikes.map((elem) => elem.id !== id)
-    localStorage.setItem('likes', JSON.stringify(STlikes))
-    setLike(false)
-   }
-   
-  function disLike() {
-    oneProduct.like -= 1;
-    likeProduct(oneProduct);
-    setLike(false);
-    console.log(oneProduct);
-  }
-
-  const navigate = useNavigate();
 
   return (
     <div className="product_card">
@@ -179,30 +175,8 @@ const ProductCard = ({ card }) => {
           >
             Buy Now
           </button>
-
-          {likes? (
-             <button
-             onClick={() => disLike(card.id)}
-             className="prd_content_btn_2"
-           >
-             Dislike
-           </button>
-          ): (
-             <button
-             style={{background: 'red'}} 
-             onClick={addLike}
-             className="prd_content_btn_2"
-           >
-             Like
-           </button>
-          )}
-          {favorite? (
-            <button
-            style={{background: 'gray'}} 
-            onClick={() => delFavorite(card.id)}
-            className="fav_btn">
           {likes ? (
-            <button onClick={disLike} className="prd_content_btn_2">
+            <button onClick={() => disLike(card.id)} className="prd_content_btn_2">
               Dislike
             </button>
           ) : (
@@ -217,12 +191,16 @@ const ProductCard = ({ card }) => {
           {favorite ? (
             <FavoriteBorderIcon
               style={{ background: "gray" }}
-              onClick={favProduct}
+              onClick={delFavorite}
               className="fav_btn"
             ></FavoriteBorderIcon>
           ) : (
             <FavoriteBorderIcon
-              onClick={favProduct}
+              // onClick={favProduct}
+              onClick={()=>{
+                setId(card.id)
+              favProduct()
+              }}
               className="fav_btn"
             ></FavoriteBorderIcon>
           )}
