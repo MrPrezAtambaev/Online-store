@@ -97,7 +97,7 @@ const SaleProducts = () => {
                     aria-labelledby="demo-radio-buttons-group-label"
                     defaultValue="female"
                     name="radio-buttons-group"
-                    onChange={(e) => fetchByParams("features", e.target.value)}
+                    onChange={(e) => fetchByParams("love", e.target.value)}
                   >
                     <FormControlLabel
                       value="jj"
@@ -105,19 +105,19 @@ const SaleProducts = () => {
                       label="All"
                     />
                     <FormControlLabel
-                      value="hh"
+                      value="Adaptable Acoustics"
                       control={<Radio />}
-                      label="Wired"
+                      label="Adaptable Acoustics"
                     />
                     <FormControlLabel
-                      value="HeadPhones"
+                      value="Active Noise Cancellation"
                       control={<Radio />}
-                      label="HeadPhones"
+                      label="Active Noise Cancellation"
                     />
                     <FormControlLabel
-                      value="ll"
+                      value="Wireless Charging"
                       control={<Radio />}
-                      label="Electronics"
+                      label="Wireless Charging"
                     />
                   </RadioGroup>
                 </FormControl>
@@ -152,19 +152,19 @@ const SaleProducts = () => {
                       label="All"
                     />
                     <FormControlLabel
-                      value="Wired"
+                      value="electronics"
                       control={<Radio />}
-                      label="Wired"
+                      label="Electronics"
                     />
                     <FormControlLabel
-                      value="HeadPhones"
+                      value="Headphones"
                       control={<Radio />}
                       label="HeadPhones"
                     />
                     <FormControlLabel
-                      value="electronics"
+                      value="Wireless earbuds"
                       control={<Radio />}
-                      label="Electronics"
+                      label="Wireless earbuds"
                     />
                   </RadioGroup>
                 </FormControl>

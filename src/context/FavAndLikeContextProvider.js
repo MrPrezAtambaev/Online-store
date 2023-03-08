@@ -1,27 +1,18 @@
+import axios from 'axios';
 import React, { createContext, useContext, useState } from 'react'
+import { useProducts } from './ProductsContext';
 
 export const favAndlike = createContext()
 export const useFavAndLike  = () => useContext(favAndlike)
 const FavAndLikeContextProvider = ({children}) => {
     const [favorite, setFavorite] = useState(false);
-    const favProduct = (oneProduct) => {
-        const products = JSON.parse(localStorage.getItem("favorites"));
-        products.push(oneProduct);
-        localStorage.setItem("favorites", JSON.stringify(products));
-        setFavorite(true);
-      };
-    
-      function delFavorite(id) {
-        let products = JSON.parse(localStorage.getItem('favorites'))
-        products = products.map((elem) => elem.id !== id)
-        localStorage.setItem('favorites', JSON.stringify(products))
-        setFavorite(false)
-      }
+    const [likes, setLike] = useState(false)
+    const {likeProduct} = useProducts()
 
+  
       const values = {
-        delFavorite,
-        favProduct,
-        favorite
+        // delFavorite,
+        // favProduct,
       }
 
   return (

@@ -46,11 +46,6 @@ const ProductsContextProvider = ({children}) => {
         getProducts()
     }
 
-    async function likeProduct(newProduct) {
-        await axios.patch(`${API}/${newProduct.id}`, newProduct)
-        getProducts()
-    }
-
     async function getOneProduct(id) {
         const {data} = await axios(`${API}/${id}`)
         // dispatch({
@@ -61,7 +56,6 @@ const ProductsContextProvider = ({children}) => {
             type: 'GET_ONE_PRODUCTS',
             payload: data
         })
-        
     }
 
     async function editedProduct(newProduct) {
@@ -92,6 +86,12 @@ const ProductsContextProvider = ({children}) => {
         navigate(url)
     }
 
+    async function likeProduct(newProduct) {
+        await axios.patch(`${API}/${newProduct.id}`, newProduct)
+        getProducts()
+    }
+  
+
     function setLikeStorage() {
         localStorage.setItem('likes', JSON.stringify(INIT_STATE.likes))
         localStorage.setItem('favorites', JSON.stringify(INIT_STATE.favorites))
@@ -110,8 +110,8 @@ const ProductsContextProvider = ({children}) => {
         setPage,
         page,
         setLikeStorage,
-        likeProduct,
-        deleteComment
+        deleteComment,
+        likeProduct
     }
 
   return (

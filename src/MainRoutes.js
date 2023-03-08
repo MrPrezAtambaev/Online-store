@@ -107,19 +107,19 @@ const MainRoutes = () => {
   ];
 
   return (
+  <ProductsContextProvider>
     <LikeContextProvider>
       <FavAndLikeContextProvider>
         <CartContextProvider>
-          <ProductsContextProvider>
             <Routes>
               {PUBLIC_ROUTES.map((item) => (
                 <Route path={item.link} element={item.element} key={item.id} />
               ))}
             </Routes>
-          </ProductsContextProvider>
         </CartContextProvider>
       </FavAndLikeContextProvider>
     </LikeContextProvider>
+  </ProductsContextProvider>
   );
 };
 

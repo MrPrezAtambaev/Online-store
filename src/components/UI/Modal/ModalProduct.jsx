@@ -49,85 +49,34 @@ const ModalProduct = ({ card }) => {
   }
 
   return (
-        <>
-        <div style={{display: 'flex', alignItems: 'center'}} >
-         <Button  sx={{color: 'gray'}} onClick={handleOpen} >
-            Review
-         </Button>
-                  <>
-                    <h1 style={{fontSize: '17px', paddingTop: '7px', padding: ''}} >{card.comments.length}</h1>
-                  </>
-        </div>
-            <Modal
-            open={open}
-            onClose={handleClose}
-            aria-labelledby="modal-modal-title"
-            aria-describedby="modal-modal-description"
-            >
-            <Box sx={style}>
-                <Typography id="modal-modal-title" variant="h6" component="h2">
-                  <input name='item' value={comment.item} onChange={handleInp} type="text" />
-                  <button onClick={commentProduct} >
-                   Review 
-                  </button>
-                </Typography>
-                <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                    {card? (
-                      <>
-                        {card.comments.map(elem => (
-                          <div key={elem.id}>
-                            <h1>{user}</h1>
-                            <h1 style={{color: 'black'}}>{elem.item}</h1>
-                            <button onClick={() => deleteComment(card.id, elem.id)}>Delete</button>
-                          </div>
-
-                        ))}
-                      </>
-                    ) : (
-                      <h1>Error</h1>
-                    )}
-                </Typography>
-            </Box>
-        </Modal>
-        </>
-  )
-}
-=======
-    oneProduct.comments.push(comment);
-    likeProduct(oneProduct);
-    console.log(oneProduct.comments);
-  }
-
-  return (
     <>
-      <div style={{ position: "relative" }}>
+      <div style={{ position: "relative"}}>
         <Button
           sx={{
-            color: "white",
             position: "absolute",
             bottom: "-40px",
-            left: "-340px",
+            left: "-320px",
+            color: 'gray' 
           }}
           onClick={handleOpen}
         >
           Review
         </Button>
-        {oneProduct ? (
+        {card ? (
           <>
             <h1
-              key={oneProduct.id}
+              key={card.id}
               style={{
-                fontSize: "17px",
-                paddingTop: "7px",
-                marginTop: "7px",
-                padding: "",
-                color: "white",
+                fontSize: "15px",
+                marginLeft: '27px',
+                marginTop: '15px',
                 position: "absolute",
                 bottom: "-40px",
                 left: "-275px",
+                color: 'gray' 
               }}
             >
-              {oneProduct.comments.length}
+              {card.comments.length}
             </h1>
           </>
         ) : (
@@ -160,9 +109,9 @@ const ModalProduct = ({ card }) => {
             ></SendIcon>
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            {oneProduct ? (
+            {card ? (
               <>
-                {oneProduct.comments.map((elem) => (
+                {card.comments.map((elem) => (
                   <div
                     style={{
                       display: "flex",

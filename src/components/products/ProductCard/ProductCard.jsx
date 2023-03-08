@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState } from "react";
 import "./ProductCard.css";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../../context/ProductsContext";
@@ -8,34 +8,31 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import AccountCircle from "@mui/icons-material/AccountCircle";
-import MenuIcon from "@mui/icons-material/Menu";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Switch from "@mui/material/Switch";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+import { useFavAndLike } from "../../../context/FavAndLikeContextProvider";
 
 const ProductCard = ({ card }) => {
   const {
     deleteProduct,
     likeProduct,
-    getOneProduct,
-    setLikeStorage,
-    oneProduct,
+    setLikeStorage
   } = useProducts();
 
+  
   const { addProductToCart, checkProductInCart } = useCart();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const navigate = useNavigate();
   const [favorite, setFavorite] = useState(false);
   const [likes, setLike] = useState(false)
-
+  
   const [admin, setAdmin] = useState(false);
+  useEffect(() => {
+    setLikeStorage()
+  }, [])
 
   const handleChange = (event) => {
     setAuth(event.target.checked);
@@ -48,15 +45,8 @@ const ProductCard = ({ card }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  useEffect(() => {
-    // if(localStorage.getItem('username')) {
-      setLikeStorage();
-      // getOneProduct(card.id);
-      // console.log(oneProduct, 'useeefect');
-    // }
-  }, []);
 
-  function addLike(id) {
+  function addLike() {
     let STlikes = JSON.parse(localStorage.getItem("likes"));
     card.like += 1;
     likeProduct(card);
@@ -64,23 +54,17 @@ const ProductCard = ({ card }) => {
     localStorage.setItem("likes", JSON.stringify(STlikes));
     setLike(true);
   }
-
+  
   function disLike(id) {
-      card.like -= 1
-      likeProduct(card)
-      let STlikes = JSON.parse(localStorage.getItem('likes'))
-      STlikes = STlikes.map((elem) => elem.id !== id)
-      localStorage.setItem('likes', JSON.stringify(STlikes))
-      setLike(false)
+    card.like -= 1
+    likeProduct(card)
+    let STlikes = JSON.parse(localStorage.getItem('likes'))
+    STlikes = STlikes.map((elem) => elem.id !== id)
+    localStorage.setItem('likes', JSON.stringify(STlikes))
+    setLike(false)
   }
-  // const [one , setOne] = useState('');
-  // useEffect(()=>{
-  //   getOneProduct(card.id);
 
-  // },[])  
-  // console.log(getOneProduct(3) , 'yoyoy');
   const [id , setId] = useState(null);
-
 
   const favProduct = () => {
       const products = JSON.parse(localStorage.getItem("favorites"));
@@ -94,7 +78,6 @@ const ProductCard = ({ card }) => {
       products = products.map((elem) => elem.id !== id)
       localStorage.setItem('favorites', JSON.stringify(products))
       setFavorite(false)
-      
   }
 
   return (
@@ -187,12 +170,13 @@ const ProductCard = ({ card }) => {
           ) : (
             <button
               style={{ background: "red" }}
-              onClick={addLike}
+              onClick={() => addLike(card)}
               className="prd_content_btn_2"
             >
               Like
             </button>
           )}
+          <>
           {favorite ? (
             <FavoriteBorderIcon
               style={{ background: "gray" }}
@@ -204,9 +188,10 @@ const ProductCard = ({ card }) => {
               // onClick={favProduct}
               onClick={()=>{
                 setId(card.id)
-              favProduct()
-              }
+                favProduct()}}>
+            </FavoriteBorderIcon>
           )}
+          </>
         </div>
       </div>
     </div>
