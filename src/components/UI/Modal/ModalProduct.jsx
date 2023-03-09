@@ -20,8 +20,7 @@ const style = {
 };
 
 const ModalProduct = ({ card }) => {
-  const { oneProduct, getOneProduct, likeProduct, deleteComment } =
-    useProducts();
+  const { oneProduct, getOneProduct, likeProduct, delComment } = useProducts();
   const user = localStorage.getItem("username");
   const [comment, setComments] = useState({ item: "", id: Date.now() });
   const [open, setOpen] = React.useState(false);
@@ -42,20 +41,20 @@ const ModalProduct = ({ card }) => {
   };
 
   function commentProduct() {
-    card.comments.push(comment)
-    likeProduct(card)
-    console.log(card.comments)
+    card.comments.push(comment);
+    likeProduct(card);
+    console.log(card.comments);
   }
 
   return (
     <>
-      <div style={{ position: "relative"}}>
+      <div style={{ position: "relative" }}>
         <Button
           sx={{
             position: "absolute",
             bottom: "-40px",
             left: "-320px",
-            color: 'gray' 
+            color: "gray",
           }}
           onClick={handleOpen}
         >
@@ -67,12 +66,12 @@ const ModalProduct = ({ card }) => {
               key={card.id}
               style={{
                 fontSize: "15px",
-                marginLeft: '27px',
-                marginTop: '15px',
+                marginLeft: "27px",
+                marginTop: "15px",
                 position: "absolute",
                 bottom: "-40px",
                 left: "-275px",
-                color: 'gray' 
+                color: "gray",
               }}
             >
               {card.comments.length}
@@ -112,6 +111,7 @@ const ModalProduct = ({ card }) => {
               <>
                 {card.comments.map((elem) => (
                   <div
+                    key={elem.id}
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -134,7 +134,7 @@ const ModalProduct = ({ card }) => {
                       <p style={{ margin: "0", color: "black" }}>{elem.item}</p>
                     </div>
                     <DeleteIcon
-                      onClick={() => deleteComment(elem.id)}
+                      onClick={() => delComment(elem.id)}
                       style={{
                         color: "black",
                         marginLeft: "160px",

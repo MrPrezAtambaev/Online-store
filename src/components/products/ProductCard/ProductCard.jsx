@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductCard.css";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../../context/ProductsContext";
@@ -12,27 +12,23 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import { useFavAndLike } from "../../../context/FavAndLikeContextProvider";
 
 const ProductCard = ({ card }) => {
-  const {
-    deleteProduct,
-    likeProduct,
-    setLikeStorage
-  } = useProducts();
+  const { deleteProduct, likeProduct, setLikeStorage } = useProducts();
 
-  
   const { addProductToCart, checkProductInCart } = useCart();
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const navigate = useNavigate();
   const [favorite, setFavorite] = useState(false);
-  const [likes, setLike] = useState(false)
+  const [likes, setLike] = useState(false);
 
   const [admin, setAdmin] = useState(false);
   useEffect(() => {
-    setLikeStorage()
-  }, [])
+    setLikeStorage();
+  }, []);
 
   const handleChange = (event) => {
     setAuth(event.target.checked);
@@ -45,7 +41,7 @@ const ProductCard = ({ card }) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  
+
   function addLike() {
     let STlikes = JSON.parse(localStorage.getItem("likes"));
     card.like += 1;
@@ -54,17 +50,17 @@ const ProductCard = ({ card }) => {
     localStorage.setItem("likes", JSON.stringify(STlikes));
     setLike(true);
   }
-  
+
   function disLike(id) {
-    card.like -= 1
-    likeProduct(card)
-    let STlikes = JSON.parse(localStorage.getItem('likes'))
-    STlikes = STlikes.map((elem) => elem.id !== id)
-    localStorage.setItem('likes', JSON.stringify(STlikes))
-    setLike(false)
+    card.like -= 1;
+    likeProduct(card);
+    let STlikes = JSON.parse(localStorage.getItem("likes"));
+    STlikes = STlikes.map((elem) => elem.id !== id);
+    localStorage.setItem("likes", JSON.stringify(STlikes));
+    setLike(false);
   }
 
-  const [id , setId] = useState(null);
+  const [id, setId] = useState(null);
   // },[])
   // console.log(getOneProduct(3) , 'yoyoy');
 
@@ -76,10 +72,10 @@ const ProductCard = ({ card }) => {
   };
 
   function delFavorite(id) {
-      let products = JSON.parse(localStorage.getItem('favorites'))
-      products = products.map((elem) => elem.id !== id)
-      localStorage.setItem('favorites', JSON.stringify(products))
-      setFavorite(false)
+    let products = JSON.parse(localStorage.getItem("favorites"));
+    products = products.map((elem) => elem.id !== id);
+    localStorage.setItem("favorites", JSON.stringify(products));
+    setFavorite(false);
   }
 
   return (
@@ -179,22 +175,22 @@ const ProductCard = ({ card }) => {
             </button>
           )}
           <>
-          {favorite ? (
-            <FavoriteIcon
-              style={{ color: "white" }}
-              onClick={delFavorite}
-              className="fav_btn"
-            ></FavoriteIcon>
-          ) : (
-            <FavoriteBorderIcon
-              style={{ color: "gray" }}
-              onClick={() => {
-                setId(card.id);
-                favProduct();
-              }}
-              className="fav_btn"
-            ></FavoriteBorderIcon>
-          )}
+            {favorite ? (
+              <FavoriteIcon
+                style={{ color: "white" }}
+                onClick={delFavorite}
+                className="fav_btn"
+              ></FavoriteIcon>
+            ) : (
+              <FavoriteBorderIcon
+                style={{ color: "gray" }}
+                onClick={() => {
+                  setId(card.id);
+                  favProduct();
+                }}
+                className="fav_btn"
+              ></FavoriteBorderIcon>
+            )}
           </>
         </div>
       </div>

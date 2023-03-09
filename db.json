@@ -7,7 +7,7 @@
       "color": "Black",
       "price": 19000,
       "type": "Wireless earbuds",
-      "like": 60,
+      "like": 61,
       "comments": [],
       "id": 1,
       "features": "Signature Sennheiser sound, Adaptive noise cancellation, High-quality voice capture, Splash-resistant IPX4, Perfect fit, Up to 28 hours of playback, Wireless charging",
@@ -20,7 +20,7 @@
       "color": "Black",
       "price": 19000,
       "type": "electronics",
-      "like": 42,
+      "like": 43,
       "comments": [
         {
           "item": "ss",
@@ -33,6 +33,10 @@
         {
           "item": "ssfds",
           "id": 1678297990631
+        },
+        {
+          "item": "adw",
+          "id": 1678335303917
         }
       ],
       "features": "Технология Dual Noise Sensor улавливает окружающий шум с помощью четырех микрофонов на чашах наушников и передает данные в HD-процессор QN1, который выполняет шумоподавление в режиме реального времени с учетом акустических характеристик окружающей среды. С новой однокристальной аудиосистемой и поддержкой Bluetooth® он с частотой 700 раз в секунду оценивает параметры музыки и шума, акустические характеристики пространства между динамиками и ушными раковинами и соответственно корректирует звуковой сигнал.",

@@ -25,7 +25,6 @@ const AuthContextProvider = ({ children }) => {
 
     try {
       const res = await axios.post(`${API}register/`, formData, config);
-      console.log(res);
       setError("");
       navigate("/login");
     } catch (e) {

@@ -58,10 +58,7 @@ const Profile = () => {
             <br />
             <br />
             <br />
-            <button
-              type="submit"
-              onClick={(() => navigate("/"), patchUsername)}
-            >
+            <button type="submit" onClick={() => patchUsername}>
               Submit
             </button>
           </form>

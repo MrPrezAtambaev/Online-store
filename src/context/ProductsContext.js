@@ -59,10 +59,6 @@ const ProductsContextProvider = ({ children }) => {
 
   async function getOneProduct(id) {
     const { data } = await axios(`${API}/${id}`);
-    // dispatch({
-    //     type: 'GET_ONE_PRODUCTS',
-    //     payload: null
-    // })
     dispatch({
       type: "GET_ONE_PRODUCTS",
       payload: data,
@@ -109,7 +105,6 @@ const ProductsContextProvider = ({ children }) => {
   const [avatarUrl, setAvatarUrl] = useState("");
 
   useEffect(() => {
-    // Load current username and avatar URL from localStorage when component mounts
     const storedUsername = localStorage.getItem("username");
     setUsername(storedUsername);
     const storedAvatarUrl = localStorage.getItem("avatarUrl");
@@ -131,72 +126,32 @@ const ProductsContextProvider = ({ children }) => {
       setUsername(newUsername);
       setNewUsername("");
     }
-
-    async function getOneProduct(id) {
-        const {data} = await axios(`${API}/${id}`)
-        // dispatch({
-        //     type: 'GET_ONE_PRODUCTS',
-        //     payload: null
-        // })
-        dispatch({
-            type: 'GET_ONE_PRODUCTS',
-            payload: data
-        })
-    }
-
-    async function editedProduct(newProduct) {
-        await axios.patch(`${API}/${newProduct.id}`, newProduct)
-        getProducts()
-    }
-
-    async function deleteProduct(id) {
-        await axios.delete(`${API}/${id}`)
-        getProducts()
-    }
-
-    async function deleteComment(id, comID) {
-        await axios.delete(`${API}/${id}/comments/${comID}`)
-        getOneProduct(id)
-    }
-
-    const fetchByParams = (query, value) => {
-        const search = new URLSearchParams (location.search);
-        if(value == 'all') {
-            search.delete(query);
-        } else {
-            search.set(query, value)
-        };
-
-        const url = `${location.pathname}?${search.toString()}`
-
-        navigate(url)
-    }
-
-    async function likeProduct(newProduct) {
-        await axios.patch(`${API}/${newProduct.id}`, newProduct)
-        getProducts()
-    }
-  
-
-    function setLikeStorage() {
-        localStorage.setItem('likes', JSON.stringify(INIT_STATE.likes))
-        localStorage.setItem('favorites', JSON.stringify(INIT_STATE.favorites))
-    }
-
     if (avatarFile) {
       const avatarUrl = URL.createObjectURL(avatarFile);
       localStorage.setItem("avatarUrl", avatarUrl);
       setAvatarUrl(avatarUrl);
-      setAvatarFile(null);
+      // setAvatarFile(null);
       setAvatarUrl("");
     }
   };
+
   function patchUsername() {
     let user = localStorage.getItem("username");
     if (username != "") {
       user = username;
     }
+    navigate("/");
   }
+
+  const delComment = async (comID) => {
+    const { data } = await axios(API);
+    console.log(data);
+    // const comments = res.data.comments.filter(
+    //   (comment) => comment.id !== comID
+    // );
+    // res.data.comments = comments;
+    // getProducts();
+  };
 
   const values = {
     getProducts,
@@ -211,7 +166,7 @@ const ProductsContextProvider = ({ children }) => {
     page,
     setLikeStorage,
     likeProduct,
-    deleteComment,
+    delComment,
 
     avatarUrl,
     handleAvatarChange,
@@ -220,6 +175,7 @@ const ProductsContextProvider = ({ children }) => {
     newUsername,
     handleNewUsernameChange,
     patchUsername,
+    setAvatarUrl,
   };
 
   return (

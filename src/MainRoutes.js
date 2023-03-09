@@ -21,11 +21,8 @@ import OtdelNavbar from "./components/UI/OtdelNavbar/OtdelNavbar";
 import FavAndLikeContextProvider from "./context/FavAndLikeContextProvider";
 import LikeContextProvider from "./context/LikeContextProvider";
 import Profile from "./components/UI/Profile/Profile";
-import { useProducts } from "./context/ProductsContext";
 
 const MainRoutes = () => {
-  // const { avatarUrl } = useProducts();
-
   const PUBLIC_ROUTES = [
     {
       link: "/register",
@@ -41,7 +38,7 @@ const MainRoutes = () => {
       link: "/admin",
       element: (
         <>
-          <OtdelNavbar /> <AdminPage />{" "}
+          <OtdelNavbar /> <AdminPage />
         </>
       ),
       id: 3,
@@ -95,7 +92,6 @@ const MainRoutes = () => {
       link: "/favorites",
       element: (
         <>
-          {" "}
           <OtdelNavbar /> <FavoritesPage />
         </>
       ),
@@ -105,7 +101,6 @@ const MainRoutes = () => {
       link: "/profile",
       element: (
         <>
-          {" "}
           <OtdelNavbar />
           <Profile />
         </>
@@ -115,19 +110,19 @@ const MainRoutes = () => {
   ];
 
   return (
-  <ProductsContextProvider>
-    <LikeContextProvider>
-      <FavAndLikeContextProvider>
-        <CartContextProvider>
+    <ProductsContextProvider>
+      <LikeContextProvider>
+        <FavAndLikeContextProvider>
+          <CartContextProvider>
             <Routes>
               {PUBLIC_ROUTES.map((item) => (
                 <Route path={item.link} element={item.element} key={item.id} />
               ))}
             </Routes>
-        </CartContextProvider>
-      </FavAndLikeContextProvider>
-    </LikeContextProvider>
-  </ProductsContextProvider>
+          </CartContextProvider>
+        </FavAndLikeContextProvider>
+      </LikeContextProvider>
+    </ProductsContextProvider>
   );
 };
 
