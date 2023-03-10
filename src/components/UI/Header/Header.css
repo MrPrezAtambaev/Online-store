@@ -1,0 +1,58 @@
+.header {
+  background-color: black;
+  height: 400px;
+}
+
+.header_block {
+  width: 1150px;
+  margin: 0 auto;
+}
+
+.header_span {
+  color: white;
+  margin-top: 0; /* Set margin-top to 0 */
+}
+
+.header_title {
+  color: #0096d6;
+  width: 700px;
+  margin: 0; /* Set all margins to 0 */
+}
+
+.header_text {
+  color: white;
+  width: 700px;
+  margin: 0; /* Set all margins to 0 */
+}
+@media only screen and (max-width: 768px) {
+  .header_title {
+    margin-top: 20px;
+  }
+  .header_text {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .header_text {
+    width: 650px;
+  }
+  .header_title {
+    width: 650px;
+  }
+  .header_block {
+    padding: 0;
+    width: 660px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .header_block {
+    width: 400px;
+  }
+  .header_text {
+    width: 400px;
+  }
+  .header_title {
+    width: 400px;
+  }
+}

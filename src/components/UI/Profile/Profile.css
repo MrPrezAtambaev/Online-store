@@ -1,0 +1,55 @@
+.profile {
+  font-family: "Roboto Slab", serif;
+}
+
+.form {
+  margin-left: 515px;
+  border: 32px solid #facb85;
+  background: #facb85;
+  width: 300px;
+  border-radius: 15px;
+  box-shadow: 20px 20px 60px #97a1a1, -20px -20px 60px #ffffff;
+  margin-top: 160px;
+}
+
+.container {
+  margin-top: 40px;
+}
+
+#username {
+  font-family: "Poppins", sans-serif;
+
+  width: 200px;
+
+  border-radius: 5px;
+  border: 4px double rgb(255, 199, 209);
+  color: black;
+  background-color: transparent;
+  box-shadow: inset 3px 3px 7px #e9bd7c, inset -3px -3px 7px #ffd98e;
+  border: var(--quadrary-color) solid 2px;
+  padding: 7px;
+}
+
+label {
+  font-family: "Poppins", sans-serif;
+
+  border-radius: 5px;
+}
+
+.click {
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: #fc465c;
+  color: white;
+  border: var(--quadrary-color) solid 2px;
+  color: black;
+  font-family: "Bitter", serif;
+}
+
+.click:hover {
+  transition: 1s;
+  background-color: #71f783;
+}

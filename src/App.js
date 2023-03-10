@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import MainRoutes from "./MainRoutes";
+import AuthContextProvider from "./contexts/AuthContextProvider";
 
 function App() {
   return (
-    <div>App</div>
-  )
+    <AuthContextProvider>
+      <MainRoutes />
+    </AuthContextProvider>
+  );
 }
 
-export default App
+export default App;
